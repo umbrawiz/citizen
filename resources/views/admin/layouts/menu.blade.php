@@ -109,6 +109,10 @@
 
         const user = JSON.parse(localStorage.getItem('user'));
 
+        if (user.type != 'B1' && user.type != 'B2') {
+            $('#add-declaration').hide();
+        }
+
         $.ajax({
             url: '{{ route("api.auth.check") }}',
             type: 'POST',

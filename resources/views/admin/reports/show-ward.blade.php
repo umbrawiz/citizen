@@ -29,8 +29,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">{{ $data[0]['ward_name'] }}
-                            <small>Thống kê</small>
+                        <h1 class="page-header">Dân số
+                            <small>Danh sách</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -50,24 +50,26 @@
                                 <th>Công việc</th>
                             </tr>
                         </thead>
-                        <tbody align="center">
-                            @foreach ($data as $item)
-                                <tr>
-                                    <td>{{ $item->id }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->identity_card }}</td>
-                                    <td>{{ $item->birthday }}</td>
-                                    <td>{{ $item->sex == 0 ? 'Nam' : 'Nữ' }}</td>
-                                    <td>{{ $item->country }}</td>
-                                    <td>{{ $item->permanent_address }}</td>
-                                    <td>{{ $item->temporary_address }}</td>
-                                    <td>{{ $item->religion == 0 ? 'Phật giáo' : ($item->religion == 1 ? 'Thiên chúa giáo' : 'Khác') }}
-                                    </td>
-                                    <td>{{ $item->education }}</td>
-                                    <td>{{ $item->job }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
+                         @if (!empty($data))
+                            <tbody align="center">
+                                @foreach ($data as $item)
+                                    <tr>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->identity_card }}</td>
+                                        <td>{{ $item->birthday }}</td>
+                                        <td>{{ $item->sex == 0 ? 'Nam' : 'Nữ' }}</td>
+                                        <td>{{ $item->country }}</td>
+                                        <td>{{ $item->permanent_address }}</td>
+                                        <td>{{ $item->temporary_address }}</td>
+                                        <td>{{ $item->religion == 0 ? 'Phật giáo' : ($item->religion == 1 ? 'Thiên chúa giáo' : 'Khác') }}
+                                        </td>
+                                        <td>{{ $item->education }}</td>
+                                        <td>{{ $item->job }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        @endif
                     </table>
                 </div>
                 <!-- /.row -->

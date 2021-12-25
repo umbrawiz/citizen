@@ -32,6 +32,7 @@
                         <h1 class="page-header">Ấp/Làng
                             <small>Thống kê</small>
                         </h1>
+                        <h3 id="total-village"></h3>
                     </div>
                     <div class="col-lg-12">
                         <p id="total-village"></p>
@@ -63,6 +64,20 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
+            $.ajax({
+                url: '{{ route('api.sum.declaration.village') }}',
+                type: 'GET',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                },
+                success: function(response) {
+                    if (response.status == '200') {
+                        $('#total-village').text('Tổng số dân là: ' + response.data);
+                    }
+                }
+            });
+
             $('#dataTables-village').DataTable({
 
                 ajax: {
@@ -89,11 +104,10 @@
                         name: 'declarations_count'
                     },
                     {
-                        targets: 1,
                         data: "code",
-                        render: function(code, type, row, meta) {
+                        render: function(code) {
                             return `
-                                <button data-code="${code}" data-number="${parseInt(row.declarations_count)}" id="button-show-village">
+                                <button data-code="${code}" id="button-show-village">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                 </button>
                             `;
@@ -103,13 +117,7 @@
                 "aaSorting": []
             });
 
-            var total = [];
 
-            $('#button-show-village').each(function() {
-                total.push($(this).data("number"));
-            });
-
-            $("#total-village").text('Tổng số dân: ' + total.reduce((a, b) => a + b, 0));
 
             $("#wrapper").on('click', '#button-show-village', function() {
 

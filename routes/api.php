@@ -78,4 +78,9 @@ Route::group(['namespace' => 'Api', 'middleware' => 'auth:admin'], function () {
     Route::get('/show-district', 'ReportController@showDeclarationDistrict')->name('api.show.declaration.district');
     Route::get('/show-ward', 'ReportController@showDeclarationWard')->name('api.show.declaration.ward');
     Route::get('/show-village', 'ReportController@showDeclarationVillage')->name('api.show.declaration.village');
+
+    Route::get('/sum-village', 'ReportController@sumDeclarationVillage')->name('api.sum.declaration.village');
+    Route::get('/sum-province', 'ReportController@sumDeclarationProvince')->name('api.sum.declaration.province');
+    Route::get('/sum-district', 'ReportController@sumDeclarationDistrict')->name('api.sum.declaration.district');
+    Route::get('/sum-ward', 'ReportController@sumDeclarationWard')->name('api.sum.declaration.ward');
 });

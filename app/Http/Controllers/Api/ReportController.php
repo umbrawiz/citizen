@@ -83,41 +83,51 @@ class ReportController extends Controller
 
     public function showDeclarationProvince(Request $request)
     {
+        $id = "dataTables-show-province";
         $code = $request->code;
-        $data = [];
+        $data = Declaration::whereHas('villages', function ($query) use ($code) {
+            $query->whereRaw("code like '$code%'");
+        })->orderBy('created_at', 'DESC')->get();
         return response()->json([
             'status' => 200,
-            'data'   => view('admin.reports.show', compact('data'))->render()
+            'data'   => view('admin.reports.show', compact('data','id'))->render()
         ]);
     }
 
     public function showDeclarationDistrict(Request $request)
     {
+        $id = "dataTables-show-district";
         $code = $request->code;
-        $data = [];
+        $data = Declaration::whereHas('villages', function ($query) use ($code) {
+            $query->whereRaw("code like '$code%'");
+        })->orderBy('created_at', 'DESC')->get();
         return response()->json([
             'status' => 200,
-            'data'   => view('admin.reports.show', compact('data'))->render()
+            'data'   => view('admin.reports.show', compact('data','id'))->render()
         ]);
     }
 
     public function showDeclarationWard(Request $request)
     {
+        $id = "dataTables-show-ward";
         $code = $request->code;
-        $data = [];
+        $data = Declaration::whereHas('villages', function ($query) use ($code) {
+            $query->whereRaw("code like '$code%'");
+        })->orderBy('created_at', 'DESC')->get();
         return response()->json([
             'status' => 200,
-            'data'   => view('admin.reports.show', compact('data'))->render()
+            'data'   => view('admin.reports.show', compact('data','id'))->render()
         ]);
     }
 
     public function showDeclarationVillage(Request $request)
     {
+        $id = "dataTables-show-village";
         $code = $request->code;
         $data = Declaration::join('villages','declarations.village_id','=','villages.id')->get(['declarations.*','villages.name AS village_name']);
         return response()->json([
             'status' => 200,
-            'data'   => view('admin.reports.show', compact('data'))->render()
+            'data'   => view('admin.reports.show', compact('data','id'))->render()
         ]);
     }
 
@@ -161,6 +171,63 @@ class ReportController extends Controller
         return response()->json([
             'status' => 200,
             'data'   => view('admin.reports.report-village')->render()
+        ]);
+    }
+
+    public function sumDeclarationVillage()
+    {
+        $total = 0;
+        $villages = Village::withCount('declarations')->orderBy('created_at', 'DESC')->get();
+        foreach ($villages as $village) {
+            $total += $village->declarations_count;
+        }
+        return response()->json([
+            'status' => 200,
+            'data'   => $total
+        ]);
+    }
+
+    public function sumDeclarationProvince()
+    {
+        $total = 0;
+        $provinces = Province::orderBy('created_at', 'DESC')->get();
+
+        foreach ($provinces as $key => $value) {
+            $total += $value->declarations()->count();
+        }
+
+        return response()->json([
+            'status' => 200,
+            'data'   => $total
+        ]);
+    }
+
+    public function sumDeclarationDistrict()
+    {
+        $total = 0;
+
+        $districts = District::orderBy('created_at', 'DESC')->get();
+
+        foreach ($districts as $key => $value) {
+            $total += $value->declarations()->count();
+        }
+
+        return response()->json([
+            'status' => 200,
+            'data'   => $total
+        ]);
+    }
+
+    public function sumDeclarationWard()
+    {
+        $total = 0;
+        $wards = Ward::withCount('declarations')->orderBy('created_at', 'DESC')->get();
+        foreach ($wards as $village) {
+            $total += $village->declarations_count;
+        }
+        return response()->json([
+            'status' => 200,
+            'data'   => $total
         ]);
     }
 }

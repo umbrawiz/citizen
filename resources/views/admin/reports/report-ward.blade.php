@@ -32,6 +32,7 @@
                         <h1 class="page-header">Xã/Phường
                             <small>Thống kê</small>
                         </h1>
+                        <h3 id="total-village"></h3>
                     </div>
                     <!-- /.col-lg-12 -->
                     <table class="table table-striped table-bordered table-hover" id="dataTables-ward">
@@ -61,6 +62,20 @@
     <script type="text/javascript">
         $(document).ready(function() {
 
+            $.ajax({
+                url: '{{ route('api.sum.declaration.ward') }}',
+                type: 'GET',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                },
+                success: function(response) {
+                    if (response.status == '200') {
+                        $('#total-village').text('Tổng số dân là: ' + response.data);
+                    }
+                }
+            });
+            
             $('#dataTables-ward').DataTable({
 
                 ajax: {

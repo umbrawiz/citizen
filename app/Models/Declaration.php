@@ -19,6 +19,6 @@ class Declaration extends Model
 
     public function villages()
     {
-        return $this->belongsTo(Village::class, 'village_id', 'code');
+        return $this->belongsTo(Village::class, 'village_id', 'id');
     }
 }

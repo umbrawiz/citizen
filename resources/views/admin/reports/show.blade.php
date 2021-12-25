@@ -1,14 +1,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
-            @if (isset($data[0]['village_name']))
-                <h1 class="page-header">{{ $data[0]['village_name'] }}
-                    <small>Thống kê</small>
-                </h1>
-            @endif
+            <h1 class="page-header">Dân số
+                <small>Danh sách</small>
+            </h1>
         </div>
         <!-- /.col-lg-12 -->
-        <table class="table table-striped table-bordered table-hover" id="dataTables-show-village">
+        <table class="table table-striped table-bordered table-hover" id="{{ $id }}">
             <thead>
                 <tr>
                     <th>#</th>

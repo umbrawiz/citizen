@@ -34,7 +34,7 @@
                             <small>Danh sách</small>
                         </h1>
                     </div>
-                    <button id="add-declaration" data-toggle="modal" data-target="#add-declaration" class="btn-success"><i class="fa fa-plus"
+                    <button id="add-declaration" data-toggle="modal" data-target="#add-testdeclaration" class="btn-success"><i class="fa fa-plus"
                         aria-hidden="true"></i></button>
                     <!-- /.col-lg-12 -->
                     <table class="table table-striped table-bordered table-hover" id="dataTables-declaration">
@@ -70,9 +70,7 @@
         </div>
 
         {{-- Modal Edit --}}
-        <div>
-            @include('admin.declarations.edit')
-        </div>
+        <div></div>
 
     </div>
 

@@ -38,21 +38,27 @@ class ReportController extends Controller
     public function showDeclarationProvince(Request $request)
     {
         $code = $request->code;
-        $data = [];
+        $data = Declaration::whereHas('villages', function ($query) use ($code) {
+            $query->whereRaw("code like '$code%'");
+        })->orderBy('created_at', 'DESC')->get();
         return view('admin.reports.show-province', compact('data'));
     }
 
     public function showDeclarationDistrict(Request $request)
     {
         $code = $request->code;
-        $data = [];
+        $data = Declaration::whereHas('villages', function ($query) use ($code) {
+            $query->whereRaw("code like '$code%'");
+        })->orderBy('created_at', 'DESC')->get();
         return view('admin.reports.show-district', compact('data'));
     }
 
     public function showDeclarationWard(Request $request)
     {
         $code = $request->code;
-        $data = [];
+        $data = Declaration::whereHas('villages', function ($query) use ($code) {
+            $query->whereRaw("code like '$code%'");
+        })->orderBy('created_at', 'DESC')->get();
         return view('admin.reports.show-ward', compact('data'));
     }
 

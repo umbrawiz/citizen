@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2021 at 04:52 AM
+-- Generation Time: Dec 25, 2021 at 05:02 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.21
 
@@ -49,9 +49,9 @@ INSERT INTO `admins` (`id`, `username`, `password`, `email_verified_at`, `rememb
 (1, 'admin', '$2y$10$lVrpXQ9JQHQlc1gp6pqViOZXhyq.e7V2M6Wr6qlNe1bcdONAHFbIy', '2021-12-24 04:46:42', NULL, 'admin', 1, 1, '2021-12-24 04:46:42', '2021-12-24 04:46:42', NULL),
 (2, 'A1', '$2y$10$DvFty/wvlXXYiD8FC9E..eDUqXec89JPFBJf5Y1KHiDI1fAx2Dv8.', '2021-12-24 04:46:42', NULL, 'A1', 2, 1, '2021-12-24 04:46:42', '2021-12-24 04:46:42', NULL),
 (3, '50', '$2y$10$SmTwk4UkCszwSaEl6X/Zhe84LZFNC19YIDowLw3VKRdnvkq5y4A7C', '2021-12-24 04:46:42', NULL, 'A2', 3, 0, '2021-12-24 04:46:42', '2021-12-24 07:08:01', 2),
-(4, '5050', '$2y$10$ytS0VRpepHP1WeDT.aKmt..ik6/f8yBFsAFP8FREFcnwtp/oFlIEW', '2021-12-24 04:46:42', NULL, 'A3', 4, 1, '2021-12-24 04:46:42', '2021-12-24 09:06:38', 3),
-(5, '505050', '$2y$10$uxoYdTFKs7OlV1bATg.ZFeCDBBoCLeIa8nFgIgKt1Ivd5bPBac0hq', '2021-12-24 04:46:42', NULL, 'B1', 5, 0, '2021-12-24 04:46:42', '2021-12-24 07:23:59', 4),
-(6, '50505050', '$2y$10$hItHG8p.Ne0Ns9xhnFX.DOnT/JjUnRU91qHMveHorb.TUOi2Jzz/m', '2021-12-24 04:46:42', NULL, 'B2', 6, 1, '2021-12-24 04:46:42', '2021-12-24 04:46:42', 5);
+(4, '50388', '$2y$10$ytS0VRpepHP1WeDT.aKmt..ik6/f8yBFsAFP8FREFcnwtp/oFlIEW', '2021-12-24 04:46:42', NULL, 'A3', 4, 1, '2021-12-24 04:46:42', '2021-12-24 09:06:38', 3),
+(5, '503888573', '$2y$10$uxoYdTFKs7OlV1bATg.ZFeCDBBoCLeIa8nFgIgKt1Ivd5bPBac0hq', '2021-12-24 04:46:42', NULL, 'B1', 5, 0, '2021-12-24 04:46:42', '2021-12-24 07:23:59', 4),
+(6, '50388857301', '$2y$10$hItHG8p.Ne0Ns9xhnFX.DOnT/JjUnRU91qHMveHorb.TUOi2Jzz/m', '2021-12-24 04:46:42', NULL, 'B2', 6, 1, '2021-12-24 04:46:42', '2021-12-24 04:46:42', 5);
 
 -- --------------------------------------------------------
 
@@ -821,9 +821,11 @@ CREATE TABLE `oauth_access_tokens` (
 
 INSERT INTO `oauth_access_tokens` (`id`, `user_id`, `client_id`, `name`, `scopes`, `revoked`, `created_at`, `updated_at`, `expires_at`) VALUES
 ('3b61e0222c3e8bf1da476c1f687c6560422dcfba340b5f440408ed84710b4326d81ab58caa409f9c', 2, 3, 'Personal Access Token', '[]', 0, '2021-12-24 06:45:40', '2021-12-24 06:45:40', '2022-12-24 13:45:40'),
+('70f3da4163dcef99a87379461c9dd1a0006689fd351c91ed33428b96d88ff1adeeb6b60bcf690daf', 2, 7, 'Personal Access Token', '[]', 0, '2021-12-25 06:42:25', '2021-12-25 06:42:25', '2022-12-25 13:42:25'),
 ('8a9d0771c0f450e2d391130869210f4d4c70b85ee95f04cf192ab1e296534ac88747cfaaba89b9a8', 1, 5, 'Personal Access Token', '[]', 0, '2021-12-24 19:36:39', '2021-12-24 19:36:39', '2022-12-25 02:36:39'),
 ('d13f80a5231a84f423f83ef3b6313215e56d08401ce3e62678494db06b9b61ba202cd45a0a02b40d', 2, 5, 'Personal Access Token', '[]', 0, '2021-12-24 09:06:16', '2021-12-24 09:06:16', '2022-12-24 16:06:16'),
-('daa48684c7caf17c778abcca6cd8e2c73884b143520f48ca6b6e06cbc5693177a2574e360ed417cd', 1, 1, 'Personal Access Token', '[]', 0, '2021-12-24 05:17:55', '2021-12-24 05:17:55', '2022-12-24 12:17:55');
+('daa48684c7caf17c778abcca6cd8e2c73884b143520f48ca6b6e06cbc5693177a2574e360ed417cd', 1, 1, 'Personal Access Token', '[]', 0, '2021-12-24 05:17:55', '2021-12-24 05:17:55', '2022-12-24 12:17:55'),
+('ddaabef58aade338771564356424ad41f13ca7ba2a1d6472f3f84af2fa316530d1ef4106e320eb0d', 2, 5, 'Personal Access Token', '[]', 0, '2021-12-25 12:23:04', '2021-12-25 12:23:04', '2022-12-25 12:23:04');
 
 -- --------------------------------------------------------
 
@@ -870,7 +872,9 @@ INSERT INTO `oauth_clients` (`id`, `user_id`, `name`, `secret`, `provider`, `red
 (3, NULL, 'Laravel Personal Access Client', '3UjtrP7tEAzvLb4sf9bIraFClv2AnML8na53GwL5', NULL, 'http://localhost', 1, 0, 0, '2021-12-24 06:42:33', '2021-12-24 06:42:33'),
 (4, NULL, 'Laravel Password Grant Client', 'PrCKQbfzq38qN8VzDjBbDBWicpA2SGfcr6r1JgUf', 'users', 'http://localhost', 0, 1, 0, '2021-12-24 06:42:33', '2021-12-24 06:42:33'),
 (5, NULL, 'Laravel Personal Access Client', 'Cq9lgar75sEOwH0vsL9WRFiOWD5WNSDNYiGMf2jL', NULL, 'http://localhost', 1, 0, 0, '2021-12-24 09:02:44', '2021-12-24 09:02:44'),
-(6, NULL, 'Laravel Password Grant Client', '783MEWBdpOHLdKvKzerVGnvHy7RoCyM0UzJfmFMN', 'users', 'http://localhost', 0, 1, 0, '2021-12-24 09:02:44', '2021-12-24 09:02:44');
+(6, NULL, 'Laravel Password Grant Client', '783MEWBdpOHLdKvKzerVGnvHy7RoCyM0UzJfmFMN', 'users', 'http://localhost', 0, 1, 0, '2021-12-24 09:02:44', '2021-12-24 09:02:44'),
+(7, NULL, 'Laravel Personal Access Client', 'XZujXFNvlYBdaMlWXGCHY3n91HIrJCzwkswXpRAh', NULL, 'http://localhost', 1, 0, 0, '2021-12-25 06:41:53', '2021-12-25 06:41:53'),
+(8, NULL, 'Laravel Password Grant Client', 'tDIuCt3zfHdtw1SOGbWX6pHW02PtWBlfPK0ImNL8', 'users', 'http://localhost', 0, 1, 0, '2021-12-25 06:41:53', '2021-12-25 06:41:53');
 
 -- --------------------------------------------------------
 
@@ -892,7 +896,8 @@ CREATE TABLE `oauth_personal_access_clients` (
 INSERT INTO `oauth_personal_access_clients` (`id`, `client_id`, `created_at`, `updated_at`) VALUES
 (1, 1, '2021-12-24 05:13:30', '2021-12-24 05:13:30'),
 (2, 3, '2021-12-24 06:42:33', '2021-12-24 06:42:33'),
-(3, 5, '2021-12-24 09:02:44', '2021-12-24 09:02:44');
+(3, 5, '2021-12-24 09:02:44', '2021-12-24 09:02:44'),
+(4, 7, '2021-12-25 06:41:53', '2021-12-25 06:41:53');
 
 -- --------------------------------------------------------
 
@@ -1291,7 +1296,7 @@ CREATE TABLE `villages` (
 --
 
 INSERT INTO `villages` (`id`, `name`, `code`, `ward_id`, `created_at`, `updated_at`) VALUES
-(1, 'Test ấp làng', '50501212', 'admin', '2021-12-24 19:46:02', '2021-12-24 19:46:02');
+(1, 'Test ấp làng', '50388857301', '8573', '2021-12-24 19:46:02', '2021-12-24 19:46:02');
 
 -- --------------------------------------------------------
 
@@ -12102,13 +12107,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `oauth_clients`
 --
 ALTER TABLE `oauth_clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `oauth_personal_access_clients`
 --
 ALTER TABLE `oauth_personal_access_clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `permissions`
