@@ -16,12 +16,12 @@ class PermissionSeeder extends Seeder
     public function run()
     {
 
-        $admin = Role::create(['name' => 'administrator', 'guard_name' => 'admin']);
-        $A1 = Role::create(['name' => 'A1', 'guard_name' => 'A1']);
-        $A2 = Role::create(['name' => 'A2', 'guard_name' => 'A2']);
-        $A3 = Role::create(['name' => 'A3', 'guard_name' => 'A3']);
-        $B1 = Role::create(['name' => 'B1', 'guard_name' => 'B1']);
-        $B2 = Role::create(['name' => 'B2', 'guard_name' => 'B2']);
+        $admin = Role::create(['name' => 'admin', 'guard_name' => 'admin']);
+        $A1 = Role::create(['name' => 'A1', 'guard_name' => 'admin']);
+        $A2 = Role::create(['name' => 'A2', 'guard_name' => 'admin']);
+        $A3 = Role::create(['name' => 'A3', 'guard_name' => 'admin']);
+        $B1 = Role::create(['name' => 'B1', 'guard_name' => 'admin']);
+        $B2 = Role::create(['name' => 'B2', 'guard_name' => 'admin']);
 
         $allPermission = config('permission.list');
         $A1Permission = config('permission.A1');
@@ -46,58 +46,43 @@ class PermissionSeeder extends Seeder
 
         foreach ($A1Permission as $value) {
             foreach ($value as $v) {
-                $listA1Permission[count($listA1Permission)]['name'] = $v;
-                $listA1Permission[count($listA1Permission) - 1]['guard_name'] = 'A1';
+                $listA1Permission[] = $v;
             }
         }
 
         foreach ($A2Permission as $value) {
             foreach ($value as $v) {
-                $listA2Permission[count($listA2Permission)]['name'] = $v;
-                $listA2Permission[count($listA2Permission) - 1]['guard_name'] = 'A2';
+                $listA2Permission[] = $v;
             }
         }
 
         foreach ($A3Permission as $value) {
             foreach ($value as $v) {
-                $listA3Permission[count($listA3Permission)]['name'] = $v;
-                $listA3Permission[count($listA3Permission) - 1]['guard_name'] = 'A3';
+                $listA3Permission[] = $v;
             }
         }
 
         foreach ($B1Permission as $value) {
             foreach ($value as $v) {
-                $listB1Permission[count($listB1Permission)]['name'] = $v;
-                $listB1Permission[count($listB1Permission) - 1]['guard_name'] = 'B1';
+                $listB1Permission[] = $v;
             }
         }
 
         foreach ($B2Permission as $value) {
             foreach ($value as $v) {
-                $listB2Permission[count($listB2Permission)]['name'] = $v;
-                $listB2Permission[count($listB2Permission) - 1]['guard_name'] = 'B2';
+                $listB2Permission[] = $v;
             }
         }
 
         Permission::insert($listAllPermission);
-        Permission::insert($listA1Permission);
-        Permission::insert($listA2Permission);
-        Permission::insert($listA3Permission);
-        Permission::insert($listB1Permission);
-        Permission::insert($listB2Permission);
 
-        $roleAdmin = Permission::where('guard_name', 'admin')->pluck('name')->toArray();
-        $roleA1 = Permission::where('guard_name', 'A1')->pluck('name')->toArray();
-        $roleA2 = Permission::where('guard_name', 'A2')->pluck('name')->toArray();
-        $roleA3 = Permission::where('guard_name', 'A3')->pluck('name')->toArray();
-        $roleB1 = Permission::where('guard_name', 'B1')->pluck('name')->toArray();
-        $roleB2 = Permission::where('guard_name', 'B2')->pluck('name')->toArray();
+        $roleAdmin = Permission::pluck('name')->toArray();
 
         $admin->syncPermissions($roleAdmin);
-        $A1->syncPermissions($roleA1);
-        $A2->syncPermissions($roleA2);
-        $A3->syncPermissions($roleA3);
-        $B1->syncPermissions($roleB1);
-        $B2->syncPermissions($roleB2);
+        $A1->syncPermissions($listA1Permission);
+        $A2->syncPermissions($listA2Permission);
+        $A3->syncPermissions($listA3Permission);
+        $B1->syncPermissions($listB1Permission);
+        $B2->syncPermissions($listB2Permission);
     }
 }

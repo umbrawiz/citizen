@@ -25,6 +25,7 @@ class CreateDeclarationsTable extends Migration
             $table->integer('religion');
             $table->string('education');
             $table->string('job');
+            $table->string('village_id');
             $table->timestamps();
         });
     }

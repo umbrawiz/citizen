@@ -10,8 +10,13 @@
         <a class="navbar-brand" href="javascript:void(0)" onclick="showListDeclaration()">CITIZENV</a>
     </div>
     <!-- /.navbar-header -->
-
     <ul class="nav navbar-top-links navbar-right">
+        <li class="nav-item" style="margin-right:2rem;" id="form-search-declaration">
+            <form class="form-inline" id="form-search-declaration">
+                <input type="text" placeholder="Nhập họ tên thân nhân ..." id="declaration-name" class="form-control"/>
+                <button type="button" id="search-declaration" class="btn btn-primary">Tìm kiếm</button>
+            </form>
+        </li>
         <!-- /.dropdown -->
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -30,3 +35,32 @@
     @include('admin.layouts.menu')
     <!-- /.navbar-static-side -->
 </nav>
+<script>
+    $('#form-search-declaration').keydown(function (e) {
+        if (e.keyCode == 13) {
+            e.preventDefault();
+            return false;
+        }
+    });
+    $("#search-declaration").click(function() {
+        var declaration_name = $("#declaration-name").val();
+        $.ajax({
+            url: '/api/declaration/search',
+            type: 'GET',
+            data: {
+                'declaration_name' : declaration_name
+            },
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            },
+            success: function(response) {
+                if(response.status == 200) {
+                    window.history.pushState('', '', '/declaration/search?q='+declaration_name);
+                    $('#page-wrapper').html(response.data);
+                    $('#dataTables-search').DataTable();
+                }
+            }
+        });
+    });
+</script>

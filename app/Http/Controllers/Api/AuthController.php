@@ -3,30 +3,30 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Permission;
 
 class AuthController extends Controller
 {
     /**
-     * Handle login
+     * Handle check
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function login(Request $request)
+    public function check(Request $request)
     {
         try {
-            $result = Auth::guard('admin')->attempt(['username' => $request->username, 'password' => $request->password], true);
-            if ($result) {
-                return response()->json([
-                    'status' => 200
-                ]);
-            } else {
-                return response()->json([
-                    'status' => 403
-                ]);
-            }
+            $user = Admin::where('username', $request->username)->first();
+            $role = $user->getAllPermissions();
+
+            return response()->json([
+                'status' => 200,
+                'data' => [
+                    'role' => $role
+                ]
+            ]);
         } catch (\Throwable $e) {
             \Log::info($e->getMessage());
         }

@@ -14,6 +14,11 @@ class Declaration extends Model
      *
      * @var array
      */
-    protected $fillable = ['identity_card','name','birthday','sex','country','permanent_address','temporary_address','religion','education','job'];
+    protected $fillable = ['identity_card', 'name', 'birthday', 'sex', 'country', 'permanent_address', 'temporary_address', 'religion', 'education', 'job', 'village_id'];
     protected $table = "declarations";
+
+    public function villages()
+    {
+        return $this->belongsTo(Village::class, 'village_id', 'code');
+    }
 }

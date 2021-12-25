@@ -15,23 +15,30 @@ class DeclarationController extends Controller
      */
     public function index()
     {
-        $declarations = Declaration::all();
+        $code = auth()->user()->username;
+        if (auth()->user()->type == 'admin' || auth()->user()->type == 'A1') {
+            $declarations = Declaration::orderBy('created_at', 'DESC')->get()->toArray();
+        } else {
+            $declarations = Declaration::whereHas('villages', function ($query) use ($code) {
+                $query->whereRaw("code like '$code%'");
+            })->orderBy('created_at', 'DESC')->get()->toArray();
+        }
+
+        foreach ($declarations as $key => $value) {
+            $declarations[$key]['sex'] = $value['sex'] == 0 ? 'Nam' : 'Nữ';
+            $declarations[$key]['religion'] = $value['religion'] == 0 ? 'Phật giáo' : ($value['religion'] == 1 ? 'Thiên chúa giáo' : 'Khác');
+        }
         return response()->json([
             'status' => 200,
-            'data'   => view('admin.declarations.declarations', compact('declarations'))->render()
+            'data'   => $declarations
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function render()
     {
         return response()->json([
             'status' => 200,
-            'data'   => view('admin.declarations.add')->render()
+            'data'   => view('admin.declarations.declarations')->render()
         ]);
     }
 
@@ -53,12 +60,13 @@ class DeclarationController extends Controller
             'temporary_address' => $request->temporary_address,
             'religion' => $request->religion,
             'education' => $request->education,
-            'job' => $request->job
+            'job' => $request->job,
+            'village_id' => auth()->user()->username
         ]);
-        $declarations = Declaration::all();
+        $declarations = Declaration::orderBy('created_at', 'DESC')->get()->toArray();
         return response()->json([
             'status' => 200,
-            'data'   => view('admin.declarations.list', compact('declarations'))->render()
+            'data'   => $declarations
         ]);
     }
 
@@ -79,12 +87,12 @@ class DeclarationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        $declaration = Declaration::find($id);
+        $declaration = Declaration::find($request->id);
         return response()->json([
             'status' => 200,
-            'data'   => view('admin.declarations.edit', compact('declaration'))->render()
+            'data'   => $declaration
         ]);
     }
 
@@ -95,9 +103,9 @@ class DeclarationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $declaration = Declaration::find($id);
+        $declaration = Declaration::find($request->id);
         $declaration->identity_card  = $request->identity_card;
         $declaration->name  = $request->name;
         $declaration->birthday = $request->birthday;
@@ -108,11 +116,11 @@ class DeclarationController extends Controller
         $declaration->religion = $request->religion;
         $declaration->education = $request->education;
         $declaration->job = $request->job;
+        $declaration->village_id = auth()->user()->username;
         $declaration->save();
-        $declarations = Declaration::all();
         return response()->json([
             'status' => 200,
-            'data'   => view('admin.declarations.list', compact('declarations'))->render()
+            'data'   => ''
         ]);
     }
 
@@ -122,14 +130,22 @@ class DeclarationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $declaration = Declaration::find($id);
+        $declaration = Declaration::find($request->id);
         $declaration->delete();
-        $declarations = Declaration::all();
         return response()->json([
             'status' => 200,
-            'data'   => view('admin.declarations.list', compact('declarations'))->render()
+            'data'   => ''
+        ]);
+    }
+
+    public function print(Request $request)
+    {
+        $declaration = Declaration::find($request->id);
+        return response()->json([
+            'status' => 200,
+            'data'   => view('admin.declarations.print', compact('declaration'))->render()
         ]);
     }
 }

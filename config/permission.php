@@ -159,11 +159,11 @@ return [
         'store' => 'default',
     ],
     'list' => [
-        'administrator' => [
-            'list'      => 'administrator.list',
-            'create'    => 'administrator.create',
-            'update'    => 'administrator.update',
-            'delete'    => 'administrator.delete'
+        'admins' => [
+            'list'      => 'admins.list',
+            'create'    => 'admins.create',
+            'update'    => 'admins.update',
+            'delete'    => 'admins.delete'
         ],
         'province' => [
             'list'      => 'province.list',
@@ -188,62 +188,206 @@ return [
             'create'    => 'declaration.create',
             'update'    => 'declaration.update',
             'delete'    => 'declaration.delete'
+        ],
+        'search-declaration' => [
+            'list'      => 'search-declaration.list',
+            'create'    => 'search-declaration.create',
+            'update'    => 'search-declaration.update',
+            'delete'    => 'search-declaration.delete'
+        ],
+        'village' => [
+            'list'      => 'village.list',
+            'create'    => 'village.create',
+            'update'    => 'village.update',
+            'delete'    => 'village.delete'
+        ],
+        'report-province' => [
+            'list'      => 'report-province.list',
+            'create'    => 'report-province.create',
+            'update'    => 'report-province.update',
+            'delete'    => 'report-province.delete'
+        ],
+        'report-district' => [
+            'list'      => 'report-district.list',
+            'create'    => 'report-district.create',
+            'update'    => 'report-district.update',
+            'delete'    => 'report-district.delete'
+        ],
+        'report-ward' => [
+            'list'      => 'report-ward.list',
+            'create'    => 'report-ward.create',
+            'update'    => 'report-ward.update',
+            'delete'    => 'report-ward.delete'
+        ],
+        'report-village' => [
+            'list'      => 'report-village.list',
+            'create'    => 'report-village.create',
+            'update'    => 'report-village.update',
+            'delete'    => 'report-village.delete'
         ],
     ],
     'A1' => [
-        'administrator' => [
-            'list'      => 'administrator.list',
-            'create'    => 'administrator.create',
-            'update'    => 'administrator.update',
-            'delete'    => 'administrator.delete'
+        'admins' => [
+            'list'      => 'admins.list',
+            'create'    => 'admins.create',
+            'update'    => 'admins.update',
+            'delete'    => 'admins.delete'
         ],
         'province' => [
             'list'      => 'province.list',
             'create'    => 'province.create',
             'update'    => 'province.update',
             'delete'    => 'province.delete'
-        ]
+        ],
+        'report-province' => [
+            'list'      => 'report-province.list',
+            'create'    => 'report-province.create',
+            'update'    => 'report-province.update',
+            'delete'    => 'report-province.delete'
+        ],
+        'report-district' => [
+            'list'      => 'report-district.list',
+            'create'    => 'report-district.create',
+            'update'    => 'report-district.update',
+            'delete'    => 'report-district.delete'
+        ],
+        'report-ward' => [
+            'list'      => 'report-ward.list',
+            'create'    => 'report-ward.create',
+            'update'    => 'report-ward.update',
+            'delete'    => 'report-ward.delete'
+        ],
+        'report-village' => [
+            'list'      => 'report-village.list',
+            'create'    => 'report-village.create',
+            'update'    => 'report-village.update',
+            'delete'    => 'report-village.delete'
+        ],
+        'search-declaration' => [
+            'list'      => 'search-declaration.list',
+            'create'    => 'search-declaration.create',
+            'update'    => 'search-declaration.update',
+            'delete'    => 'search-declaration.delete'
+        ],
     ],
     'A2' => [
-        'administrator' => [
-            'list'      => 'administrator.list',
-            'create'    => 'administrator.create',
-            'update'    => 'administrator.update',
-            'delete'    => 'administrator.delete'
+        'admins' => [
+            'list'      => 'admins.list',
+            'create'    => 'admins.create',
+            'update'    => 'admins.update',
+            'delete'    => 'admins.delete'
         ],
         'district' => [
             'list'      => 'district.list',
             'create'    => 'district.create',
             'update'    => 'district.update',
             'delete'    => 'district.delete'
-        ]
+        ],
+        'report-province' => [
+            'list'      => 'report-province.list',
+            'create'    => 'report-province.create',
+            'update'    => 'report-province.update',
+            'delete'    => 'report-province.delete'
+        ],
+        'report-district' => [
+            'list'      => 'report-district.list',
+            'create'    => 'report-district.create',
+            'update'    => 'report-district.update',
+            'delete'    => 'report-district.delete'
+        ],
+        'report-ward' => [
+            'list'      => 'report-ward.list',
+            'create'    => 'report-ward.create',
+            'update'    => 'report-ward.update',
+            'delete'    => 'report-ward.delete'
+        ],
+        'report-village' => [
+            'list'      => 'report-village.list',
+            'create'    => 'report-village.create',
+            'update'    => 'report-village.update',
+            'delete'    => 'report-village.delete'
+        ],
+        'search-declaration' => [
+            'list'      => 'search-declaration.list',
+            'create'    => 'search-declaration.create',
+            'update'    => 'search-declaration.update',
+            'delete'    => 'search-declaration.delete'
+        ],
     ],
     'A3' => [
-        'administrator' => [
-            'list'      => 'administrator.list',
-            'create'    => 'administrator.create',
-            'update'    => 'administrator.update',
-            'delete'    => 'administrator.delete'
+        'admins' => [
+            'list'      => 'admins.list',
+            'create'    => 'admins.create',
+            'update'    => 'admins.update',
+            'delete'    => 'admins.delete'
         ],
         'ward' => [
             'list'      => 'ward.list',
             'create'    => 'ward.create',
             'update'    => 'ward.update',
             'delete'    => 'ward.delete'
-        ]
+        ],
+        'report-district' => [
+            'list'      => 'report-district.list',
+            'create'    => 'report-district.create',
+            'update'    => 'report-district.update',
+            'delete'    => 'report-district.delete'
+        ],
+        'report-ward' => [
+            'list'      => 'report-ward.list',
+            'create'    => 'report-ward.create',
+            'update'    => 'report-ward.update',
+            'delete'    => 'report-ward.delete'
+        ],
+        'report-village' => [
+            'list'      => 'report-village.list',
+            'create'    => 'report-village.create',
+            'update'    => 'report-village.update',
+            'delete'    => 'report-village.delete'
+        ],
+        'search-declaration' => [
+            'list'      => 'search-declaration.list',
+            'create'    => 'search-declaration.create',
+            'update'    => 'search-declaration.update',
+            'delete'    => 'search-declaration.delete'
+        ],
     ],
     'B1' => [
-        'administrator' => [
-            'list'      => 'administrator.list',
-            'create'    => 'administrator.create',
-            'update'    => 'administrator.update',
-            'delete'    => 'administrator.delete'
+        'admins' => [
+            'list'      => 'admins.list',
+            'create'    => 'admins.create',
+            'update'    => 'admins.update',
+            'delete'    => 'admins.delete'
         ],
         'declaration' => [
             'list'      => 'declaration.list',
             'create'    => 'declaration.create',
             'update'    => 'declaration.update',
             'delete'    => 'declaration.delete'
+        ],
+        'village' => [
+            'list'      => 'village.list',
+            'create'    => 'village.create',
+            'update'    => 'village.update',
+            'delete'    => 'village.delete'
+        ],
+        'report-ward' => [
+            'list'      => 'report-ward.list',
+            'create'    => 'report-ward.create',
+            'update'    => 'report-ward.update',
+            'delete'    => 'report-ward.delete'
+        ],
+        'report-village' => [
+            'list'      => 'report-village.list',
+            'create'    => 'report-village.create',
+            'update'    => 'report-village.update',
+            'delete'    => 'report-village.delete'
+        ],
+        'search-declaration' => [
+            'list'      => 'search-declaration.list',
+            'create'    => 'search-declaration.create',
+            'update'    => 'search-declaration.update',
+            'delete'    => 'search-declaration.delete'
         ],
     ],
     'B2' => [
@@ -252,6 +396,12 @@ return [
             'create'    => 'declaration.create',
             'update'    => 'declaration.update',
             'delete'    => 'declaration.delete'
-        ]
+        ],
+        'report-village' => [
+            'list'      => 'report-village.list',
+            'create'    => 'report-village.create',
+            'update'    => 'report-village.update',
+            'delete'    => 'report-village.delete'
+        ],
     ]
 ];

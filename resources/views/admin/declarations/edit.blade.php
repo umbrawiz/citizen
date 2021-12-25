@@ -1,62 +1,182 @@
-@include('admin.layouts.header')
-<div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Thông tin thân nhân
-                    <small>Cập nhật</small>
-                </h1>
-                <input type="hidden" id="id" value="{{ $declaration->id }}" />
-                <div class="form-group">
-                    <label for="identity_card">Chứng minh nhân dân: <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" placeholder="Nhập chứng minh nhân dân" id="identity_card" name="identity_card" value="{{ $declaration->identity_card }}">
+<div class="modal fade" id="edit-declaration" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">Thông tin thân nhân
+                                <small>Sửa</small>
+                            </h1>
+                            <form id="form-declaration">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <label for="name">Họ và tên: <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Nhập họ và tên" id="name" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="identity_card">Chứng minh nhân dân: <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Nhập chứng minh nhân dân" id="identity_card" name="identity_card">
+                                </div>
+                                <div class="form-group">
+                                    <label for="birthday">Ngày sinh <span class="text-danger">*</span></label>
+                                    <input type="date" class="form-control" id="birthday" name="birthday" max="{{ date('Y-m-d') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sex">Giới tính: <span class="text-danger">*</span></label>
+                                    <select class="form-control" name="sex" id="sex">
+                                        <option value="0">Nam</option>
+                                        <option value="1">Nữ</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Quê quán: <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Nhập quê quán" id="country" name="country">
+                                </div>
+                                <div class="form-group">
+                                    <label for="permanent_address">Địa chỉ thường trú: <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Nhập địa chỉ thường trú" id="permanent_address" name="permanent_address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="temporary_address">Địa chỉ tạm trú: <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Nhập địa chỉ tạm trú" id="temporary_address" name="temporary_address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="religion">Tôn giáo: <span class="text-danger">*</span></label>
+                                    <select class="form-control" name="religion" id="religion">
+                                        <option value="0">Phật giáo</option>
+                                        <option value="1">Thiên chúa giáo</option>
+                                        <option value="2">Khác</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="education">Trình độ văn hóa: <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Nhập trình độ văn hóa" id="education" name="education">
+                                </div>
+                                <div class="form-group">
+                                    <label for="job">Công việc hiện tại: <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Nhập công việc hiện tại" id="job" name="job">
+                                </div>
+                                <input type="hidden" name="id">
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="name">Họ và tên: <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" placeholder="Nhập họ và tên" id="name" name="name" value="{{ $declaration->name }}">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="button-modal-edit-declaration">Sửa</button>
                 </div>
-                <div class="form-group">
-                    <label for="birthday">Ngày sinh <span class="text-danger">*</span></label>
-                    <input type="date" class="form-control" id="birthday" name="birthday" max="{{ date('Y-m-d') }}" value="{{ $declaration->birthday }}">
-                </div>
-                <div class="form-group">
-                    <label for="sex">Giới tính: <span class="text-danger">*</span></label>
-                    <select class="form-control" name="sex" id="sex">
-                        <option value="0" {{ $declaration->sex == 0 ? 'selected' : '' }}>Nam</option>
-                        <option value="1" {{ $declaration->sex == 1 ? 'selected' : '' }}>Nữ</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="country">Quê quán: <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" placeholder="Nhập quê quán" id="country" name="country" value="{{ $declaration->country }}">
-                </div>
-                <div class="form-group">
-                    <label for="permanent_address">Địa chỉ thường trú: <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" placeholder="Nhập địa chỉ thường trú" id="permanent_address" name="permanent_address" value="{{ $declaration->permanent_address }}">
-                </div>
-                <div class="form-group">
-                    <label for="temporary_address">Địa chỉ tạm trú: <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" placeholder="Nhập địa chỉ tạm trú" id="temporary_address" name="temporary_address" value="{{ $declaration->temporary_address }}">
-                </div>
-                <div class="form-group">
-                    <label for="religion">Tôn giáo: <span class="text-danger">*</span></label>
-                    <select class="form-control" name="religion" id="religion">
-                        <option value="0" {{ $declaration->religion == 0 ? 'selected' : '' }}>Phật giáo</option>
-                        <option value="1" {{ $declaration->religion == 1 ? 'selected' : '' }}>Thiên chúa giáo</option>
-                        <option value="2" {{ $declaration->religion == 2 ? 'selected' : '' }}>Khác</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="education">Trình độ văn hóa: <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" placeholder="Nhập trình độ văn hóa" id="education" name="education" value="{{ $declaration->education }}">
-                </div>
-                <div class="form-group">
-                    <label for="job">Công việc hiện tại: <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" placeholder="Nhập công việc hiện tại" id="job" name="job" value="{{ $declaration->job }}">
-                </div>
-
-                <button type="button" id="edit-declaration" class="btn btn-primary" style="margin-bottom:15px;">Cập nhật</button>
             </div>
         </div>
-    </div>    
-</div>
+    </div>
+
+
+    <script>
+        $(document).ready(function() {
+            $('#button-modal-edit-declaration').click(function() {
+                var id = $('#edit-declaration input[name=id]').val();
+                var name = $('#edit-declaration #name').val();
+                var identity_card = $('#edit-declaration #identity_card').val();
+                var birthday = $('#edit-declaration #birthday').val();
+                var sex = $('#edit-declaration #sex').val();
+                var country = $('#edit-declaration #country').val();
+                var permanent_address = $('#edit-declaration #permanent_address').val();
+                var temporary_address = $('#edit-declaration #temporary_address').val();
+                var religion = $('#edit-declaration #religion').val();
+                var education = $('#edit-declaration #education').val();
+                var job = $('#edit-declaration #job').val();
+                var message = '';
+
+                if (name == '') {
+                    message = 'Họ tên không được để trống';
+                }
+
+                if (identity_card == '') {
+                    message = 'Chứng minh nhân dân không được để trống';
+                }
+
+                if (birthday == '') {
+                    message = 'Ngày sinh không được để trống';
+                }
+
+                if (sex == '') {
+                    message = 'Giới tính không được để trống';
+                }
+
+                if (country == '') {
+                    message = 'Quê quán không được để trống';
+                }
+
+                if (permanent_address == '') {
+                    message = 'Địa chỉ thường trú không được để trống';
+                }
+
+                if (temporary_address == '') {
+                    message = 'Địa chỉ tạm trú không được để trống';
+                }
+
+                if (religion == '') {
+                    message = 'Tôn giáo không được để trống';
+                }
+
+                if (education == '') {
+                    message = 'Trình độ văn hóa không được để trống';
+                }
+
+                if (job == '') {
+                    message = 'Công việc không được để trống';
+                }
+
+                if (message != '') {
+                    Swal.fire(
+                        'Lỗi',
+                        message,
+                        'error'
+                    )
+                    return false;
+                } else {
+                    $.ajax({
+                        url: '{{ route('api.declaration.update') }}',
+                        type: 'PUT',
+                        data: {
+                            id: id,
+                            name: name,
+                            identity_card: identity_card,
+                            birthday: birthday,
+                            sex: sex,
+                            country: country,
+                            permanent_address: permanent_address,
+                            temporary_address: temporary_address,
+                            religion: religion,
+                            education: education,
+                            job: job,
+                            _token: '{{ csrf_token() }}'
+                        },
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                            'Authorization': 'Bearer ' + localStorage.getItem('token')
+                        },
+                        success: function(data) {
+                            if (data.status == '200') {
+                                Swal.fire(
+                                    'Thành công',
+                                    data.message,
+                                    'success'
+                                )
+                                $('#edit-declaration').modal('hide');
+                                $('#dataTables-declaration').DataTable().ajax.reload();
+
+                            } else {
+                                Swal.fire(
+                                    'Lỗi',
+                                    data.message,
+                                    'error'
+                                )
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>

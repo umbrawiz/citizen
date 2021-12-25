@@ -6,11 +6,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
+use Laravel\Passport\HasApiTokens;
 
 class Admin extends Authenticatable
 {
-    use HasFactory, Notifiable;
-    
+    use HasFactory, Notifiable, HasRoles, HasApiTokens;
+
     protected $guard = 'admin';
 
     /**
@@ -21,7 +23,10 @@ class Admin extends Authenticatable
     protected $fillable = [
         'username',
         'password',
-        'type'
+        'type',
+        'role_id',
+        'is_declaration',
+        'parent_id'
     ];
 
     /**
@@ -42,4 +47,14 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function parent()
+    {
+        return $this->belongsTo(Admin::class, 'parent_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(Admin::class, 'parent_id');
+    }
 }
