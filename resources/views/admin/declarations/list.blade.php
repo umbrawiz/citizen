@@ -41,8 +41,8 @@
                             <td>{{ $declaration->education }}</td>
                             <td>{{ $declaration->job }}</td>
                             <td>
-                                <a href="javascript:void(0)" onclick="deleteDeclaration({{ $declaration->id }});"><i class="fa fa-times" aria-hidden="true"></i></a>
-                                    <a href="javascript:void(0)" onclick="showFormEditDeclaration({{ $declaration->id }})" style="margin:0 1rem;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" onclick="deleteDeclaration({{ $declaration->id }});" class="btn-danger"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                    <a href="javascript:void(0)" onclick="showFormEditDeclaration({{ $declaration->id }})" style="margin:0 1rem;" class="btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                         @php $count++; @endphp

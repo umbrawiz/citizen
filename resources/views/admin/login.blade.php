@@ -22,29 +22,47 @@
 </head>
 <body>
     @include('sweetalert::alert')
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="card card-signin my-5">
-              <div class="card-body">
-                <h5 class="card-title text-center">Đăng nhập</h5>
-                <form id="form-login">
-                  <div class="form-label-group">
-                    <input type="text" id="username" class="form-control" placeholder="Tài khoản" name="username" autofocus>
-                    <label for="username">Tài khoản</label>
-                  </div>
-
-                  <div class="form-label-group">
-                    <input type="password" id="password" class="form-control" placeholder="Mật khẩu" name="password">
-                    <label for="password">Mật khẩu</label>
-                  </div>
-                  <button class="btn btn-lg btn-block text-uppercase text-white" style="background:#fc9d3d;" id="btn-login" type="button">Đăng nhập</button>
-                </form>
+    <section class="vh-100">
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+              alt="Sample image">
+          </div>
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <form id="form-login">
+              <h3 class="text-center text-secondary">CITIZENV</h3>
+              <!-- Username input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="username">Tài khoản</label>
+                <input type="text" class="form-control form-control-lg"
+                  placeholder="Tài khoản" id="username" name="username" />
               </div>
-            </div>
+    
+              <!-- Password input -->
+              <div class="form-outline mb-3">
+                <label class="form-label" for="password">Mật khẩu</label>
+                <input type="password" class="form-control form-control-lg"
+                  placeholder="Mật khẩu" id="password" name="password"/>
+              </div>
+    
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <button type="button" class="btn btn-primary btn-lg"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;" id="btn-login">Đăng nhập</button>
+              </div>
+    
+            </form>
           </div>
         </div>
-    </div>
+      </div>
+      <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+        <!-- Copyright -->
+        <div class="text-white mb-3 mb-md-0">
+          Bản quyền nội dung thuộc sở hữu của bộ y tế. Ghi rõ nguồn khi chia sẻ dưới mọi hình thức.
+        </div>
+        <!-- Copyright -->
+      </div>
+    </section>
     <script type="text/javascript" src="{{ asset('admin/js/ajax.js') }}"></script>
 </body>
 </html>

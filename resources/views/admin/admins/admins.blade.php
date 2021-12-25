@@ -34,7 +34,7 @@
                             <small>Danh sách</small>
                         </h1>
                     </div>
-                    <button data-toggle="modal" data-target="#add-admin"><i class="fa fa-plus"
+                    <button data-toggle="modal" data-target="#add-admin" class="btn-success"><i class="fa fa-plus"
                             aria-hidden="true"></i></button>
                     <!-- /.col-lg-12 -->
                     <table class="table table-striped table-bordered table-hover" id="dataTables-admin">
@@ -107,10 +107,10 @@
 
                             if (user.id != id) {
                                 return `
-                                <button data-id="${id}" id="button-edit-admin" data-toggle="modal" data-target="#edit-admin">
+                                <button data-id="${id}" id="button-edit-admin" data-toggle="modal" data-target="#edit-admin" class="btn-primary">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </button>
-                                <button data-id="${id}" id="button-delete-admin">
+                                <button data-id="${id}" id="button-delete-admin" class="btn-danger">
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </button>
                             `;

@@ -2,7 +2,7 @@
     <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">
             <li id="admins">
-                <a href="#"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Người dùng<span
+                <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Người dùng<span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -12,7 +12,7 @@
                 <!-- /.nav-second-level -->
             </li>
             <li id="province">
-                <a href="#"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Tỉnh/Thành phố<span
+                <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Tỉnh/Thành phố<span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -22,7 +22,7 @@
                 <!-- /.nav-second-level -->
             </li>
             <li id="district">
-                <a href="#"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Quận/Huyện<span
+                <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Quận/Huyện<span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -32,7 +32,7 @@
                 <!-- /.nav-second-level -->
             </li>
             <li id="ward">
-                <a href="#"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Xã/Phường<span
+                <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Xã/Phường<span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -42,7 +42,7 @@
                 <!-- /.nav-second-level -->
             </li>
             <li id="village">
-                <a href="#"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Ấp/Làng<span
+                <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Ấp/Làng<span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -52,7 +52,7 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Thân nhân<span
+                <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Thân nhân<span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -62,7 +62,7 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Thống kê dân số<span
+                <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Thống kê dân số<span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li id="report-province">

@@ -34,7 +34,7 @@
                             <small>Danh sách</small>
                         </h1>
                     </div>
-                    <button id="add-declaration" data-toggle="modal" data-target="#add-declaration"><i class="fa fa-plus"
+                    <button id="add-declaration" data-toggle="modal" data-target="#add-declaration" class="btn-success"><i class="fa fa-plus"
                         aria-hidden="true"></i></button>
                     <!-- /.col-lg-12 -->
                     <table class="table table-striped table-bordered table-hover" id="dataTables-declaration">
@@ -143,22 +143,22 @@
                             if (user.type == 'B1' || user.type == 'B2') {
                                 if (user.type == 'B1') {
                                     return `
-                                        <button data-id="${id}" id="button-edit-declaration" data-toggle="modal" data-target="#edit-declaration">
+                                        <button data-id="${id}" id="button-edit-declaration" data-toggle="modal" data-target="#edit-declaration" class="btn-primary">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </button>
-                                        <button data-id="${id}" id="button-delete-declaration">
+                                        <button data-id="${id}" id="button-delete-declaration" class="btn-danger">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </button>
-                                        <button data-id="${id}" id="button-print-declaration">
+                                        <button data-id="${id}" id="button-print-declaration" class="btn-warning">
                                             <i class="fa fa-print" aria-hidden="true"></i>
                                         </button>
                                     `;
                                 } else {
                                     return `
-                                        <button data-id="${id}" id="button-edit-declaration" data-toggle="modal" data-target="#edit-declaration">
+                                        <button data-id="${id}" id="button-edit-declaration" data-toggle="modal" data-target="#edit-declaration" class="btn-primary">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </button>
-                                        <button data-id="${id}" id="button-delete-declaration">
+                                        <button data-id="${id}" id="button-delete-declaration" class="btn-danger">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </button>
                                     `;

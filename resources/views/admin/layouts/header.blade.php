@@ -13,8 +13,14 @@
     <ul class="nav navbar-top-links navbar-right">
         <li class="nav-item" style="margin-right:2rem;" id="form-search-declaration">
             <form class="form-inline" id="form-search-declaration">
-                <input type="text" placeholder="Nhập họ tên thân nhân ..." id="declaration-name" class="form-control"/>
-                <button type="button" id="search-declaration" class="btn btn-primary">Tìm kiếm</button>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="declaration-name" placeholder="Search">
+                  <div class="input-group-btn">
+                    <button class="btn btn-primary" type="button" id="search-declaration">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </div>
+                </div>
             </form>
         </li>
         <!-- /.dropdown -->

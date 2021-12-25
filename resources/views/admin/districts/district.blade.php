@@ -34,7 +34,7 @@
                             <small>Danh sách</small>
                         </h1>
                     </div>
-                    <button data-toggle="modal" data-target="#add-district"><i class="fa fa-plus"
+                    <button data-toggle="modal" data-target="#add-district" class="btn-success"><i class="fa fa-plus"
                             aria-hidden="true"></i></button>
                     <!-- /.col-lg-12 -->
                     <table class="table table-striped table-bordered table-hover" id="dataTables-district">
@@ -99,10 +99,10 @@
                         data: "id",
                         render: function(id) {
                             return `
-                                <button data-id="${id}" id="button-edit-district" data-toggle="modal" data-target="#edit-district">
+                                <button data-id="${id}" id="button-edit-district" data-toggle="modal" data-target="#edit-district" class="btn-primary">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </button>
-                                <button data-id="${id}" id="button-delete-district">
+                                <button data-id="${id}" id="button-delete-district" class="btn-danger">
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </button>
                             `;

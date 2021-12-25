@@ -34,7 +34,7 @@
                             <small>{{ $q }}</small>
                         </h1>
                     </div>
-                    <button data-toggle="modal" data-target="#add-declaration"><i class="fa fa-plus"
+                    <button data-toggle="modal" data-target="#add-declaration" class="btn-success"><i class="fa fa-plus"
                             aria-hidden="true"></i></button>
                     <!-- /.col-lg-12 -->
                     <table class="table table-striped table-bordered table-hover" id="dataTables-search">
@@ -69,10 +69,10 @@
                                     <td>{{ $item->education }}</td>
                                     <td>{{ $item->job }}</td>
                                     <td>
-                                        <button data-id="{{ $item->id }}" id="button-edit-declaration" data-toggle="modal" data-target="#edit-declaration">
+                                        <button data-id="{{ $item->id }}" id="button-edit-declaration" data-toggle="modal" data-target="#edit-declaration" class="btn-primary">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </button>
-                                        <button data-id="{{ $item->id }}" id="button-delete-declaration">
+                                        <button data-id="{{ $item->id }}" id="button-delete-declaration" class="btn-danger">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </button>
                                     </td>
