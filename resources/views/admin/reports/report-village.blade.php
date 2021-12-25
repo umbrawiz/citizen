@@ -29,7 +29,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Ấp/Làng
+                        <h1 class="page-header">Thôn/Bản
                             <small>Thống kê</small>
                         </h1>
                         <h3 id="total-village"></h3>
@@ -42,8 +42,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Ấp/Làng</th>
-                                <th>Mã Ấp/Làng</th>
+                                <th>Thôn/Bản</th>
+                                <th>Mã Thôn/Bản</th>
                                 <th>Số dân</th>
                                 <th>Hành động</th>
                             </tr>

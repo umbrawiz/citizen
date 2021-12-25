@@ -42,7 +42,7 @@
                 <!-- /.nav-second-level -->
             </li>
             <li id="village">
-                <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Ấp/Làng<span
+                <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Thôn/Bản<span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -75,7 +75,7 @@
                         <a href="javascript:void(0)" onclick="showReportWard()">Xã/Phường</a>
                     </li>
                     <li id="report-village">
-                        <a href="javascript:void(0)" onclick="showReportVillage()">Ấp/Làng</a>
+                        <a href="javascript:void(0)" onclick="showReportVillage()">Thôn/Bản</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
