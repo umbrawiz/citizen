@@ -74,16 +74,16 @@
     <script>
         $(document).ready(function() {
             $('#button-modal-add-declaration').click(function() {
-                var name = $('#add-declaration #name').val();
-                var identity_card = $('#add-declaration #identity_card').val();
-                var birthday = $('#add-declaration #birthday').val();
-                var sex = $('#add-declaration #sex').val();
-                var country = $('#add-declaration #country').val();
-                var permanent_address = $('#add-declaration #permanent_address').val();
-                var temporary_address = $('#add-declaration #temporary_address').val();
-                var religion = $('#add-declaration #religion').val();
-                var education = $('#add-declaration #education').val();
-                var job = $('#add-declaration #job').val();
+                var name = $('#add-testdeclaration #name').val();
+                var identity_card = $('#add-testdeclaration #identity_card').val();
+                var birthday = $('#add-testdeclaration #birthday').val();
+                var sex = $('#add-testdeclaration #sex').val();
+                var country = $('#add-testdeclaration #country').val();
+                var permanent_address = $('#add-testdeclaration #permanent_address').val();
+                var temporary_address = $('#add-testdeclaration #temporary_address').val();
+                var religion = $('#add-testdeclaration #religion').val();
+                var education = $('#add-testdeclaration #education').val();
+                var job = $('#add-testdeclaration #job').val();
                 var message = '';
 
                 if (name == '') {

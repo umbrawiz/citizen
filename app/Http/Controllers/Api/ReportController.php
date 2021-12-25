@@ -124,7 +124,7 @@ class ReportController extends Controller
     {
         $id = "dataTables-show-village";
         $code = $request->code;
-        $data = Declaration::join('villages','declarations.village_id','=','villages.id')->get(['declarations.*','villages.name AS village_name']);
+        $data = Declaration::where('village_id','like',$code)->get();
         return response()->json([
             'status' => 200,
             'data'   => view('admin.reports.show', compact('data','id'))->render()

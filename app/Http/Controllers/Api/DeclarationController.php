@@ -19,9 +19,7 @@ class DeclarationController extends Controller
         if (auth()->user()->type == 'admin' || auth()->user()->type == 'A1') {
             $declarations = Declaration::orderBy('created_at', 'DESC')->get()->toArray();
         } else {
-            $declarations = Declaration::whereHas('villages', function ($query) use ($code) {
-                $query->whereRaw("code like '$code%'");
-            })->orderBy('created_at', 'DESC')->get()->toArray();
+            $declarations = Declaration::where('village_id','like',$code)->get()->toArray();
         }
 
         foreach ($declarations as $key => $value) {

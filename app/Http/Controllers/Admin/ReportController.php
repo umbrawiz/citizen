@@ -65,7 +65,7 @@ class ReportController extends Controller
     public function showDeclarationVillage(Request $request)
     {
         $code = $request->code;
-        $data = Declaration::join('villages','declarations.village_id','=','villages.id')->get(['declarations.*','villages.name AS village_name']);
+        $data = Declaration::where('village_id','like',$code)->get();
         return view('admin.reports.show-village', compact('data'));
     }
 }
