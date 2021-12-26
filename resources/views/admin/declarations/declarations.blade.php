@@ -141,7 +141,7 @@
                             if (user.type == 'B1' || user.type == 'B2') {
                                 if (user.type == 'B1') {
                                     return `
-                                        <button data-id="${id}" id="button-edit-declaration" data-toggle="modal" data-target="#edit-declaration" class="btn-primary">
+                                        <button data-id="${id}" id="button-edit-declaration" data-toggle="modal" data-target="#edit-declaration-1" class="btn-primary">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </button>
                                         <button data-id="${id}" id="button-delete-declaration" class="btn-danger">
@@ -153,7 +153,7 @@
                                     `;
                                 } else {
                                     return `
-                                        <button data-id="${id}" id="button-edit-declaration" data-toggle="modal" data-target="#edit-declaration" class="btn-primary">
+                                        <button data-id="${id}" id="button-edit-declaration" data-toggle="modal" data-target="#edit-declaration-1" class="btn-primary">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </button>
                                         <button data-id="${id}" id="button-delete-declaration" class="btn-danger">
@@ -187,15 +187,15 @@
                     },
                     success: function(response) {
                         if (response.status == '200') {
-                            $('#edit-declaration input[name="name"]').val(response.data.name);
-                            $('#edit-declaration input[name="identity_card"]').val(response.data.identity_card);
-                            $('#edit-declaration input[name="birthday"]').val(response.data.birthday);
-                            $('#edit-declaration input[name="country"]').val(response.data.country);
-                            $('#edit-declaration input[name="permanent_address"]').val(response.data.permanent_address);
-                            $('#edit-declaration input[name="temporary_address"]').val(response.data.temporary_address);
-                            $('#edit-declaration input[name="education"]').val(response.data.education);
-                            $('#edit-declaration input[name="job"]').val(response.data.job);
-                            $('#edit-declaration input[name="id"]').val(id);
+                            $('#edit-declaration-1 input[name="name"]').val(response.data.name);
+                            $('#edit-declaration-1 input[name="identity_card"]').val(response.data.identity_card);
+                            $('#edit-declaration-1 input[name="birthday"]').val(response.data.birthday);
+                            $('#edit-declaration-1 input[name="country"]').val(response.data.country);
+                            $('#edit-declaration-1 input[name="permanent_address"]').val(response.data.permanent_address);
+                            $('#edit-declaration-1 input[name="temporary_address"]').val(response.data.temporary_address);
+                            $('#edit-declaration-1 input[name="education"]').val(response.data.education);
+                            $('#edit-declaration-1 input[name="job"]').val(response.data.job);
+                            $('#edit-declaration-1 input[name="id"]').val(id);
                             $(`select[name^="sex"] option[value=${response.data.sex}]`).attr("selected","selected");
                             $(`select[name^="religion"] option[value=${response.data.religion}]`).attr("selected","selected");
                         }

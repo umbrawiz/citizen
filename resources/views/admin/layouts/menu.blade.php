@@ -110,7 +110,7 @@
         const user = JSON.parse(localStorage.getItem('user'));
 
         if (user.type != 'B1' && user.type != 'B2') {
-            $('#add-declaration').hide();
+            $('#add-testdeclaration').hide();
         }
 
         $.ajax({

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Declaration;
+use App\Models\Village;
 
 class DeclarationController extends Controller
 {
@@ -16,10 +17,15 @@ class DeclarationController extends Controller
     public function index()
     {
         $code = auth()->user()->username;
+        $village = Village::where('code', $code)->first();
         if (auth()->user()->type == 'admin' || auth()->user()->type == 'A1') {
             $declarations = Declaration::orderBy('created_at', 'DESC')->get()->toArray();
         } else {
-            $declarations = Declaration::where('village_id','like',$code)->get()->toArray();
+            if (is_null($village)) {
+                $declarations = Declaration::where('village_id','like',$code)->get()->toArray();
+            } else {
+                $declarations = Declaration::where('village_id',$village->id)->get()->toArray();
+            }
         }
 
         foreach ($declarations as $key => $value) {
@@ -48,6 +54,8 @@ class DeclarationController extends Controller
      */
     public function store(Request $request)
     {
+        $code = auth()->user()->username;
+        $village = Village::where('code', $code)->first();
         Declaration::create([
             'identity_card'  => $request->identity_card,
             'name'  => $request->name,
@@ -59,7 +67,7 @@ class DeclarationController extends Controller
             'religion' => $request->religion,
             'education' => $request->education,
             'job' => $request->job,
-            'village_id' => auth()->user()->username
+            'village_id' => $village->id
         ]);
         $declarations = Declaration::orderBy('created_at', 'DESC')->get()->toArray();
         return response()->json([
@@ -103,6 +111,8 @@ class DeclarationController extends Controller
      */
     public function update(Request $request)
     {
+        $code = auth()->user()->username;
+        $village = Village::where('code', $code)->first();
         $declaration = Declaration::find($request->id);
         $declaration->identity_card  = $request->identity_card;
         $declaration->name  = $request->name;
@@ -114,7 +124,7 @@ class DeclarationController extends Controller
         $declaration->religion = $request->religion;
         $declaration->education = $request->education;
         $declaration->job = $request->job;
-        $declaration->village_id = auth()->user()->username;
+        $declaration->village_id = $village->id;
         $declaration->save();
         return response()->json([
             'status' => 200,

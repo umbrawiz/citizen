@@ -161,7 +161,7 @@
                                     data.message,
                                     'success'
                                 )
-                                $('#add-declaration').modal('hide');
+                                $('#add-testdeclaration').modal('hide');
                                 $('#dataTables-declaration').DataTable().ajax.reload();
 
                             } else {
