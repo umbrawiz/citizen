@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 25, 2021 at 05:02 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 7.4.21
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th12 26, 2021 lúc 03:53 AM
+-- Phiên bản máy phục vụ: 10.4.22-MariaDB
+-- Phiên bản PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `citizenv`
+-- Cơ sở dữ liệu: `citizen`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Cấu trúc bảng cho bảng `admins`
 --
 
 CREATE TABLE `admins` (
@@ -42,21 +42,23 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `admins`
+-- Đang đổ dữ liệu cho bảng `admins`
 --
 
 INSERT INTO `admins` (`id`, `username`, `password`, `email_verified_at`, `remember_token`, `type`, `role_id`, `is_declaration`, `created_at`, `updated_at`, `parent_id`) VALUES
 (1, 'admin', '$2y$10$lVrpXQ9JQHQlc1gp6pqViOZXhyq.e7V2M6Wr6qlNe1bcdONAHFbIy', '2021-12-24 04:46:42', NULL, 'admin', 1, 1, '2021-12-24 04:46:42', '2021-12-24 04:46:42', NULL),
 (2, 'A1', '$2y$10$DvFty/wvlXXYiD8FC9E..eDUqXec89JPFBJf5Y1KHiDI1fAx2Dv8.', '2021-12-24 04:46:42', NULL, 'A1', 2, 1, '2021-12-24 04:46:42', '2021-12-24 04:46:42', NULL),
-(3, '50', '$2y$10$SmTwk4UkCszwSaEl6X/Zhe84LZFNC19YIDowLw3VKRdnvkq5y4A7C', '2021-12-24 04:46:42', NULL, 'A2', 3, 0, '2021-12-24 04:46:42', '2021-12-24 07:08:01', 2),
-(4, '50388', '$2y$10$ytS0VRpepHP1WeDT.aKmt..ik6/f8yBFsAFP8FREFcnwtp/oFlIEW', '2021-12-24 04:46:42', NULL, 'A3', 4, 1, '2021-12-24 04:46:42', '2021-12-24 09:06:38', 3),
-(5, '503888573', '$2y$10$uxoYdTFKs7OlV1bATg.ZFeCDBBoCLeIa8nFgIgKt1Ivd5bPBac0hq', '2021-12-24 04:46:42', NULL, 'B1', 5, 0, '2021-12-24 04:46:42', '2021-12-24 07:23:59', 4),
-(6, '50388857301', '$2y$10$hItHG8p.Ne0Ns9xhnFX.DOnT/JjUnRU91qHMveHorb.TUOi2Jzz/m', '2021-12-24 04:46:42', NULL, 'B2', 6, 1, '2021-12-24 04:46:42', '2021-12-24 04:46:42', 5);
+(8, '65', '$2y$10$8ewsGUmGTB4AeU5jB0SowebHLrjdO1ulX4iYSTxpI36w1RePSuVtu', NULL, NULL, 'A2', 3, 1, '2021-12-25 10:13:35', '2021-12-25 11:45:12', NULL),
+(9, '65389', '$2y$10$ZifCWt82C1oTRJ/BXw62wOilWhUPeiF8e1LWHLNPgxVkRXij/2W1O', NULL, NULL, 'A3', 4, 0, '2021-12-25 10:20:39', '2021-12-25 11:44:24', 8),
+(10, '653898574', '$2y$10$IWARRdsjQy0fdrv5pz9CzuNUgSkZH3x7UKS9ik6DEswWk6l3vSI2.', NULL, NULL, 'B1', 5, 0, '2021-12-25 10:31:31', '2021-12-25 11:44:24', 9),
+(11, '65389857402', '$2y$10$Ok7zJdk26SC13m6ID6tbE.PpZLArenzovafPideaC/t9BwJud0sRO', NULL, NULL, 'B2', 6, 0, '2021-12-25 10:34:39', '2021-12-25 11:44:24', 10),
+(12, '66', '$2y$10$HUNF5MHb1jbE1uxuWJJkMOcs8YNkpG7h3gw0uAO/yWNG8qJ6r3hE.', NULL, NULL, 'A2', 3, 1, '2021-12-25 11:38:01', '2021-12-25 11:45:41', NULL),
+(13, '66634', '$2y$10$WT9i0.argSOEJL4FTaPSpO6aRn3uDNSpOceN3MR9c57F6azta2xfa', NULL, NULL, 'A3', 4, 1, '2021-12-25 11:45:55', '2021-12-25 11:45:55', 12);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `declarations`
+-- Cấu trúc bảng cho bảng `declarations`
 --
 
 CREATE TABLE `declarations` (
@@ -77,16 +79,20 @@ CREATE TABLE `declarations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `declarations`
+-- Đang đổ dữ liệu cho bảng `declarations`
 --
 
 INSERT INTO `declarations` (`id`, `identity_card`, `name`, `birthday`, `sex`, `country`, `permanent_address`, `temporary_address`, `religion`, `education`, `job`, `village_id`, `created_at`, `updated_at`) VALUES
-(1, '123456789', 'Test', '2000-09-25', 0, 'TPHCM', 'TPHCM', 'TPHCM', 0, 'Đại học', 'Sinh viên', '1', NULL, NULL);
+(1, '123456789', 'Test', '2000-09-25', 0, 'TPHCM', 'TPHCM', 'TPHCM', 0, 'Đại học', 'Sinh viên', '1', NULL, NULL),
+(2, '123456789', 'Dương Tú Anh', '2000-09-25', 0, 'TPHCM', 'TPHCM', 'TPHCM', 0, 'Đại học', 'Sinh viên', '653898574', '2021-12-25 10:40:39', '2021-12-25 10:40:39'),
+(3, '9876543321', 'Dân 1', '1999-01-08', 1, 'Hà Nội', 'Hà Nội', 'Hà Nội', 1, 'Cao đẳng', 'Nhân viên văn phòng', '653898574', '2021-12-25 10:50:19', '2021-12-25 10:50:19'),
+(4, '1928193913', 'Dân 2', '1998-08-21', 0, 'Đà Nẵng', 'Đà Nẵng', 'Đà Nẵng', 2, 'Tốt nghiệp cấp 3', 'Tài xế', '653898574', '2021-12-25 10:59:18', '2021-12-25 10:59:18'),
+(5, '131444211313', 'Dân 3', '1990-09-30', 0, 'Cần Thơ', 'Cần Thơ', 'Cần Thơ', 2, 'Đại học', 'giáo viên', '65389857402', '2021-12-25 11:02:08', '2021-12-25 11:02:08');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `districts`
+-- Cấu trúc bảng cho bảng `districts`
 --
 
 CREATE TABLE `districts` (
@@ -99,7 +105,7 @@ CREATE TABLE `districts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `districts`
+-- Đang đổ dữ liệu cho bảng `districts`
 --
 
 INSERT INTO `districts` (`id`, `name`, `code`, `province_id`, `created_at`, `updated_at`) VALUES
@@ -490,7 +496,6 @@ INSERT INTO `districts` (`id`, `name`, `code`, `province_id`, `created_at`, `upd
 (385, 'Thị xã Hồng Lĩnh', '28385', '28', '0000-00-00 00:00:00', '2021-12-19 16:02:13'),
 (386, 'Huyện Côn Đảo', '49386', '49', '0000-00-00 00:00:00', '2021-12-19 16:02:13'),
 (387, 'Huyện Hương Sơn', '28387', '28', '0000-00-00 00:00:00', '2021-12-19 16:02:13'),
-(388, 'Quận 1', '50388', '50', '0000-00-00 00:00:00', '2021-12-19 16:02:13'),
 (389, 'Huyện Đức Thọ', '28389', '28', '0000-00-00 00:00:00', '2021-12-19 16:02:13'),
 (390, 'Quận 12', '50390', '50', '0000-00-00 00:00:00', '2021-12-19 16:02:13'),
 (391, 'Quận Thủ Đức', '50391', '50', '0000-00-00 00:00:00', '2021-12-19 16:02:13'),
@@ -699,9 +704,9 @@ INSERT INTO `districts` (`id`, `name`, `code`, `province_id`, `created_at`, `upd
 (594, 'Huyện Thuận Bắc', '38594', '38', '0000-00-00 00:00:00', '2021-12-19 16:02:14'),
 (595, 'Quận Thốt Nốt', '59595', '59', '0000-00-00 00:00:00', '2021-12-19 16:02:14'),
 (596, 'Huyện Thuận Nam', '38596', '38', '0000-00-00 00:00:00', '2021-12-19 16:02:14'),
-(597, 'Huyện Vĩnh Thạnh', '59597', '59', '0000-00-00 00:00:00', '2021-12-19 16:02:14');
+(597, 'Huyện Vĩnh Thạnh', '59597', '59', '0000-00-00 00:00:00', '2021-12-19 16:02:14'),
+(598, 'Huyện Cờ Đỏ', '59598', '59', '0000-00-00 00:00:00', '2021-12-19 16:02:14');
 INSERT INTO `districts` (`id`, `name`, `code`, `province_id`, `created_at`, `updated_at`) VALUES
-(598, 'Huyện Cờ Đỏ', '59598', '59', '0000-00-00 00:00:00', '2021-12-19 16:02:14'),
 (599, 'Huyện Phong Điền', '59599', '59', '0000-00-00 00:00:00', '2021-12-19 16:02:14'),
 (600, 'Huyện Thới Lai', '59600', '59', '0000-00-00 00:00:00', '2021-12-19 16:02:14'),
 (601, 'Huyện Châu Thành A', '60601', '60', '0000-00-00 00:00:00', '2021-12-19 16:02:14'),
@@ -733,12 +738,14 @@ INSERT INTO `districts` (`id`, `name`, `code`, `province_id`, `created_at`, `upd
 (627, 'Huyện Đầm Dơi', '63627', '63', '0000-00-00 00:00:00', '2021-12-19 16:02:14'),
 (628, 'Huyện Năm Căn', '63628', '63', '0000-00-00 00:00:00', '2021-12-19 16:02:14'),
 (629, 'Huyện Phú Tân', '63629', '63', '0000-00-00 00:00:00', '2021-12-19 16:02:14'),
-(630, 'Huyện Ngọc Hiển', '63630', '63', '0000-00-00 00:00:00', '2021-12-19 16:02:14');
+(630, 'Huyện Ngọc Hiển', '63630', '63', '0000-00-00 00:00:00', '2021-12-19 16:02:14'),
+(633, 'Quận Test', '65389', '65', '2021-12-25 10:18:54', '2021-12-25 10:18:54'),
+(634, 'Huyện demo', '66225', '66', '2021-12-25 11:43:40', '2021-12-25 11:43:40');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Cấu trúc bảng cho bảng `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -748,7 +755,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Đang đổ dữ liệu cho bảng `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -766,7 +773,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `model_has_permissions`
+-- Cấu trúc bảng cho bảng `model_has_permissions`
 --
 
 CREATE TABLE `model_has_permissions` (
@@ -778,7 +785,7 @@ CREATE TABLE `model_has_permissions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `model_has_roles`
+-- Cấu trúc bảng cho bảng `model_has_roles`
 --
 
 CREATE TABLE `model_has_roles` (
@@ -788,19 +795,22 @@ CREATE TABLE `model_has_roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `model_has_roles`
+-- Đang đổ dữ liệu cho bảng `model_has_roles`
 --
 
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (1, 'App\\Models\\Admin', 1),
 (2, 'App\\Models\\Admin', 2),
+(3, 'App\\Models\\Admin', 8),
+(3, 'App\\Models\\Admin', 12),
 (4, 'App\\Models\\Admin', 4),
+(4, 'App\\Models\\Admin', 13),
 (6, 'App\\Models\\Admin', 6);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oauth_access_tokens`
+-- Cấu trúc bảng cho bảng `oauth_access_tokens`
 --
 
 CREATE TABLE `oauth_access_tokens` (
@@ -816,21 +826,33 @@ CREATE TABLE `oauth_access_tokens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `oauth_access_tokens`
+-- Đang đổ dữ liệu cho bảng `oauth_access_tokens`
 --
 
 INSERT INTO `oauth_access_tokens` (`id`, `user_id`, `client_id`, `name`, `scopes`, `revoked`, `created_at`, `updated_at`, `expires_at`) VALUES
+('21253064e8cd5df1b1a4494d85fccb4f278372085f2fda49cee80b21ee668c942319ef69890d7e3b', 9, 9, 'Personal Access Token', '[]', 0, '2021-12-25 10:28:18', '2021-12-25 10:28:18', '2022-12-25 17:28:18'),
+('36d529ada099e3d42c793d14c7282c572dc6f08a3b0395df1b1d25f4f6eb1ed46632b9aa1b102699', 6, 9, 'Personal Access Token', '[]', 0, '2021-12-25 11:19:21', '2021-12-25 11:19:21', '2022-12-25 18:19:21'),
+('3785483860ca4fa331f64ecfe327891263343796c0d526ded9d23ce0f72079f8879ac95490a385a6', 2, 11, 'Personal Access Token', '[]', 0, '2021-12-25 11:32:52', '2021-12-25 11:32:52', '2022-12-25 18:32:52'),
 ('3b61e0222c3e8bf1da476c1f687c6560422dcfba340b5f440408ed84710b4326d81ab58caa409f9c', 2, 3, 'Personal Access Token', '[]', 0, '2021-12-24 06:45:40', '2021-12-24 06:45:40', '2022-12-24 13:45:40'),
+('3f89ca06614c06da73c8176d8585d6ba3977914fc788ffbb8732a7411863706bbb4e9c4d52dc706c', 11, 9, 'Personal Access Token', '[]', 0, '2021-12-25 11:00:52', '2021-12-25 11:00:52', '2022-12-25 18:00:52'),
+('4fd32bbeff3c6310df208769e26a105e2fa603ad95f6ccb6ac960d743f4d25312d58e5ae2a0387a1', 9, 9, 'Personal Access Token', '[]', 0, '2021-12-25 11:17:57', '2021-12-25 11:17:57', '2022-12-25 18:17:57'),
+('56a7ccdd0a9f04f5fbc53bd950577b363b06bf5a59a4f15a5c29d2ad33012689ca4dd68e45535c1b', 2, 13, 'Personal Access Token', '[]', 0, '2021-12-25 19:39:58', '2021-12-25 19:39:58', '2022-12-26 02:39:58'),
+('5d115f4dbbe557104d177134ea9b30b46b0704f376a373d4ddbbdc357547d76919a867753711c6af', 10, 9, 'Personal Access Token', '[]', 0, '2021-12-25 10:33:05', '2021-12-25 10:33:05', '2022-12-25 17:33:05'),
 ('70f3da4163dcef99a87379461c9dd1a0006689fd351c91ed33428b96d88ff1adeeb6b60bcf690daf', 2, 7, 'Personal Access Token', '[]', 0, '2021-12-25 06:42:25', '2021-12-25 06:42:25', '2022-12-25 13:42:25'),
+('7829afd29f098b041d3fc0ea96cc4d313b975653d4cca2cfe4e257463fb4cc18208113d3876a07ee', 8, 9, 'Personal Access Token', '[]', 0, '2021-12-25 10:15:22', '2021-12-25 10:15:22', '2022-12-25 17:15:22'),
 ('8a9d0771c0f450e2d391130869210f4d4c70b85ee95f04cf192ab1e296534ac88747cfaaba89b9a8', 1, 5, 'Personal Access Token', '[]', 0, '2021-12-24 19:36:39', '2021-12-24 19:36:39', '2022-12-25 02:36:39'),
+('c08ee4a0929b40dc7a831e96b6d50d9e0f9098e200ce0778d136f40b3a9ceb658b6e672182e74480', 13, 11, 'Personal Access Token', '[]', 0, '2021-12-25 11:46:16', '2021-12-25 11:46:16', '2022-12-25 18:46:16'),
+('c3c368e94425dc4103f548dc20bfe058ab3c2f7cec6eb8c7eb2dc79e1970a07626cda8e809fdfbb0', 12, 11, 'Personal Access Token', '[]', 0, '2021-12-25 11:38:30', '2021-12-25 11:38:30', '2022-12-25 18:38:30'),
 ('d13f80a5231a84f423f83ef3b6313215e56d08401ce3e62678494db06b9b61ba202cd45a0a02b40d', 2, 5, 'Personal Access Token', '[]', 0, '2021-12-24 09:06:16', '2021-12-24 09:06:16', '2022-12-24 16:06:16'),
+('d7321e5d2ddfbd466b7578c6a899b990d17e89e9bd5765b399021b4e3baa2037f93f1594bd5a921d', 12, 11, 'Personal Access Token', '[]', 0, '2021-12-25 11:41:08', '2021-12-25 11:41:08', '2022-12-25 18:41:08'),
 ('daa48684c7caf17c778abcca6cd8e2c73884b143520f48ca6b6e06cbc5693177a2574e360ed417cd', 1, 1, 'Personal Access Token', '[]', 0, '2021-12-24 05:17:55', '2021-12-24 05:17:55', '2022-12-24 12:17:55'),
-('ddaabef58aade338771564356424ad41f13ca7ba2a1d6472f3f84af2fa316530d1ef4106e320eb0d', 2, 5, 'Personal Access Token', '[]', 0, '2021-12-25 12:23:04', '2021-12-25 12:23:04', '2022-12-25 12:23:04');
+('ddaabef58aade338771564356424ad41f13ca7ba2a1d6472f3f84af2fa316530d1ef4106e320eb0d', 2, 5, 'Personal Access Token', '[]', 0, '2021-12-25 12:23:04', '2021-12-25 12:23:04', '2022-12-25 12:23:04'),
+('ff070863491d07843cfe337b4ffce07b6972db05b6059c42428af98f1f94a29da94eaa348bc01228', 2, 9, 'Personal Access Token', '[]', 0, '2021-12-25 10:01:40', '2021-12-25 10:01:40', '2022-12-25 17:01:40');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oauth_auth_codes`
+-- Cấu trúc bảng cho bảng `oauth_auth_codes`
 --
 
 CREATE TABLE `oauth_auth_codes` (
@@ -845,7 +867,7 @@ CREATE TABLE `oauth_auth_codes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oauth_clients`
+-- Cấu trúc bảng cho bảng `oauth_clients`
 --
 
 CREATE TABLE `oauth_clients` (
@@ -863,7 +885,7 @@ CREATE TABLE `oauth_clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `oauth_clients`
+-- Đang đổ dữ liệu cho bảng `oauth_clients`
 --
 
 INSERT INTO `oauth_clients` (`id`, `user_id`, `name`, `secret`, `provider`, `redirect`, `personal_access_client`, `password_client`, `revoked`, `created_at`, `updated_at`) VALUES
@@ -874,12 +896,18 @@ INSERT INTO `oauth_clients` (`id`, `user_id`, `name`, `secret`, `provider`, `red
 (5, NULL, 'Laravel Personal Access Client', 'Cq9lgar75sEOwH0vsL9WRFiOWD5WNSDNYiGMf2jL', NULL, 'http://localhost', 1, 0, 0, '2021-12-24 09:02:44', '2021-12-24 09:02:44'),
 (6, NULL, 'Laravel Password Grant Client', '783MEWBdpOHLdKvKzerVGnvHy7RoCyM0UzJfmFMN', 'users', 'http://localhost', 0, 1, 0, '2021-12-24 09:02:44', '2021-12-24 09:02:44'),
 (7, NULL, 'Laravel Personal Access Client', 'XZujXFNvlYBdaMlWXGCHY3n91HIrJCzwkswXpRAh', NULL, 'http://localhost', 1, 0, 0, '2021-12-25 06:41:53', '2021-12-25 06:41:53'),
-(8, NULL, 'Laravel Password Grant Client', 'tDIuCt3zfHdtw1SOGbWX6pHW02PtWBlfPK0ImNL8', 'users', 'http://localhost', 0, 1, 0, '2021-12-25 06:41:53', '2021-12-25 06:41:53');
+(8, NULL, 'Laravel Password Grant Client', 'tDIuCt3zfHdtw1SOGbWX6pHW02PtWBlfPK0ImNL8', 'users', 'http://localhost', 0, 1, 0, '2021-12-25 06:41:53', '2021-12-25 06:41:53'),
+(9, NULL, 'Laravel Personal Access Client', '1XMFghKedWlgsHyYqlqPV7zTjrTUEevcxCA8SSl9', NULL, 'http://localhost', 1, 0, 0, '2021-12-25 09:57:46', '2021-12-25 09:57:46'),
+(10, NULL, 'Laravel Password Grant Client', 'p2pH1Izsh3dWZvXLLVU5prYRhTbrdgqyRg3RQc2L', 'users', 'http://localhost', 0, 1, 0, '2021-12-25 09:57:46', '2021-12-25 09:57:46'),
+(11, NULL, 'Laravel Personal Access Client', 'fyDgqschu9uty9XYSyyPxD1IjMa72t1F8Z6q4fdl', NULL, 'http://localhost', 1, 0, 0, '2021-12-25 11:31:52', '2021-12-25 11:31:52'),
+(12, NULL, 'Laravel Password Grant Client', 'B8k5sPUoFFmXCD7h4O6HHLmcLhKAtBJTSBAV9Vih', 'users', 'http://localhost', 0, 1, 0, '2021-12-25 11:31:52', '2021-12-25 11:31:52'),
+(13, NULL, 'Laravel Personal Access Client', 'bp0rhvCayogeVwL13cIFGT6bWBtNPhMblpUnZMOh', NULL, 'http://localhost', 1, 0, 0, '2021-12-25 19:38:21', '2021-12-25 19:38:21'),
+(14, NULL, 'Laravel Password Grant Client', 'vWfzzcTSpxLhUifTaOcEfwaiKoFCEdVZSXzk0c5B', 'users', 'http://localhost', 0, 1, 0, '2021-12-25 19:38:21', '2021-12-25 19:38:21');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oauth_personal_access_clients`
+-- Cấu trúc bảng cho bảng `oauth_personal_access_clients`
 --
 
 CREATE TABLE `oauth_personal_access_clients` (
@@ -890,19 +918,22 @@ CREATE TABLE `oauth_personal_access_clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `oauth_personal_access_clients`
+-- Đang đổ dữ liệu cho bảng `oauth_personal_access_clients`
 --
 
 INSERT INTO `oauth_personal_access_clients` (`id`, `client_id`, `created_at`, `updated_at`) VALUES
 (1, 1, '2021-12-24 05:13:30', '2021-12-24 05:13:30'),
 (2, 3, '2021-12-24 06:42:33', '2021-12-24 06:42:33'),
 (3, 5, '2021-12-24 09:02:44', '2021-12-24 09:02:44'),
-(4, 7, '2021-12-25 06:41:53', '2021-12-25 06:41:53');
+(4, 7, '2021-12-25 06:41:53', '2021-12-25 06:41:53'),
+(5, 9, '2021-12-25 09:57:46', '2021-12-25 09:57:46'),
+(6, 11, '2021-12-25 11:31:52', '2021-12-25 11:31:52'),
+(7, 13, '2021-12-25 19:38:21', '2021-12-25 19:38:21');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oauth_refresh_tokens`
+-- Cấu trúc bảng cho bảng `oauth_refresh_tokens`
 --
 
 CREATE TABLE `oauth_refresh_tokens` (
@@ -915,7 +946,7 @@ CREATE TABLE `oauth_refresh_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permissions`
+-- Cấu trúc bảng cho bảng `permissions`
 --
 
 CREATE TABLE `permissions` (
@@ -927,7 +958,7 @@ CREATE TABLE `permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `permissions`
+-- Đang đổ dữ liệu cho bảng `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
@@ -979,7 +1010,7 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Cấu trúc bảng cho bảng `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -997,7 +1028,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `provinces`
+-- Cấu trúc bảng cho bảng `provinces`
 --
 
 CREATE TABLE `provinces` (
@@ -1009,7 +1040,7 @@ CREATE TABLE `provinces` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `provinces`
+-- Đang đổ dữ liệu cho bảng `provinces`
 --
 
 INSERT INTO `provinces` (`id`, `name`, `code`, `created_at`, `updated_at`) VALUES
@@ -1062,7 +1093,6 @@ INSERT INTO `provinces` (`id`, `name`, `code`, `created_at`, `updated_at`) VALUE
 (47, 'Tỉnh Bình Dương', '47', '0000-00-00 00:00:00', '2021-12-19 15:48:55'),
 (48, 'Tỉnh Đồng Nai', '48', '0000-00-00 00:00:00', '2021-12-19 15:48:55'),
 (49, 'Tỉnh Bà Rịa - Vũng Tàu', '49', '0000-00-00 00:00:00', '2021-12-19 15:48:55'),
-(50, 'Thành phố Hồ Chí Minh', '50', '0000-00-00 00:00:00', '2021-12-19 15:48:55'),
 (51, 'Tỉnh Long An', '51', '0000-00-00 00:00:00', '2021-12-19 15:48:55'),
 (52, 'Tỉnh Tiền Giang', '52', '0000-00-00 00:00:00', '2021-12-19 15:48:55'),
 (53, 'Tỉnh Bến Tre', '53', '0000-00-00 00:00:00', '2021-12-19 15:48:55'),
@@ -1075,12 +1105,14 @@ INSERT INTO `provinces` (`id`, `name`, `code`, `created_at`, `updated_at`) VALUE
 (60, 'Tỉnh Hậu Giang', '60', '0000-00-00 00:00:00', '2021-12-19 15:48:55'),
 (61, 'Tỉnh Sóc Trăng', '61', '0000-00-00 00:00:00', '2021-12-19 15:48:55'),
 (62, 'Tỉnh Bạc Liêu', '62', '0000-00-00 00:00:00', '2021-12-19 15:48:55'),
-(63, 'Tỉnh Cà Mau', '63', '0000-00-00 00:00:00', '2021-12-19 15:48:55');
+(63, 'Tỉnh Cà Mau', '63', '0000-00-00 00:00:00', '2021-12-19 15:48:55'),
+(64, 'Tỉnh Test', '65', '2021-12-25 17:12:05', '2021-12-25 10:12:05'),
+(66, 'Tỉnh demo', '66', '2021-12-25 11:37:16', '2021-12-25 11:37:16');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Cấu trúc bảng cho bảng `roles`
 --
 
 CREATE TABLE `roles` (
@@ -1092,7 +1124,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Đang đổ dữ liệu cho bảng `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
@@ -1106,7 +1138,7 @@ INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role_has_permissions`
+-- Cấu trúc bảng cho bảng `role_has_permissions`
 --
 
 CREATE TABLE `role_has_permissions` (
@@ -1115,7 +1147,7 @@ CREATE TABLE `role_has_permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `role_has_permissions`
+-- Đang đổ dữ liệu cho bảng `role_has_permissions`
 --
 
 INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
@@ -1279,7 +1311,7 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `villages`
+-- Cấu trúc bảng cho bảng `villages`
 --
 
 CREATE TABLE `villages` (
@@ -1292,16 +1324,16 @@ CREATE TABLE `villages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `villages`
+-- Đang đổ dữ liệu cho bảng `villages`
 --
 
 INSERT INTO `villages` (`id`, `name`, `code`, `ward_id`, `created_at`, `updated_at`) VALUES
-(1, 'Test ấp làng', '50388857301', '8573', '2021-12-24 19:46:02', '2021-12-24 19:46:02');
+(2, 'Thôn Test', '65389857402', '653898574', '2021-12-25 10:34:22', '2021-12-25 10:34:22');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wards`
+-- Cấu trúc bảng cho bảng `wards`
 --
 
 CREATE TABLE `wards` (
@@ -1314,7 +1346,7 @@ CREATE TABLE `wards` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `wards`
+-- Đang đổ dữ liệu cho bảng `wards`
 --
 
 INSERT INTO `wards` (`id`, `name`, `code`, `district_id`, `created_at`, `updated_at`) VALUES
@@ -9904,7 +9936,6 @@ INSERT INTO `wards` (`id`, `name`, `code`, `district_id`, `created_at`, `updated
 (8570, 'Phường Bến Thành', '503888570', '388', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
 (8571, 'Xã Gia Tân 3', '483668571', '366', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
 (8572, 'Xã Đất Cuốc', '473578572', '357', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
-(8573, 'Phường Nguyễn Thái Bình', '503888573', '388', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
 (8574, 'Phường Bình Thuận', '504228574', '422', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
 (8575, 'Xã Gia Kiệm', '483668575', '366', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
 (8576, 'Xã Hiếu Liêm', '473578576', '357', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
@@ -9988,9 +10019,9 @@ INSERT INTO `wards` (`id`, `name`, `code`, `district_id`, `created_at`, `updated
 (8654, 'Xã Phú Ngãi Trị', '514588654', '458', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
 (8655, 'Phường Linh Đông', '503918655', '391', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
 (8656, 'Xã Phước Vĩnh An', '504238656', '423', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
-(8657, 'Phường Bình Thọ', '503918657', '391', '0000-00-00 00:00:00', '2021-12-19 16:12:21');
+(8657, 'Phường Bình Thọ', '503918657', '391', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
+(8658, 'Xã Thái Mỹ', '504238658', '423', '0000-00-00 00:00:00', '2021-12-19 16:12:21');
 INSERT INTO `wards` (`id`, `name`, `code`, `district_id`, `created_at`, `updated_at`) VALUES
-(8658, 'Xã Thái Mỹ', '504238658', '423', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
 (8659, 'Phường Trường Thọ', '503918659', '391', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
 (8660, 'Xã Vĩnh Công', '514588660', '458', '0000-00-00 00:00:00', '2021-12-19 16:12:21'),
 (8661, 'Phường Tam Phước', '', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -10563,9 +10594,9 @@ INSERT INTO `wards` (`id`, `name`, `code`, `district_id`, `created_at`, `updated
 (9228, 'Xã Hòa Định', '524729228', '472', '0000-00-00 00:00:00', '2021-12-19 16:12:24'),
 (9229, 'Xã Đức Lập Hạ', '514469229', '446', '0000-00-00 00:00:00', '2021-12-19 16:12:24'),
 (9230, 'Xã Bình Ninh', '524729230', '472', '0000-00-00 00:00:00', '2021-12-19 16:12:24'),
-(9231, 'Xã Châu Hưng', '534869231', '486', '0000-00-00 00:00:00', '2021-12-19 16:12:24');
+(9231, 'Xã Châu Hưng', '534869231', '486', '0000-00-00 00:00:00', '2021-12-19 16:12:24'),
+(9232, 'Xã Tân Phú', '514469232', '446', '0000-00-00 00:00:00', '2021-12-19 16:12:24');
 INSERT INTO `wards` (`id`, `name`, `code`, `district_id`, `created_at`, `updated_at`) VALUES
-(9232, 'Xã Tân Phú', '514469232', '446', '0000-00-00 00:00:00', '2021-12-19 16:12:24'),
 (9233, 'Thị trấn Vĩnh Bình', '524749233', '474', '0000-00-00 00:00:00', '2021-12-19 16:12:24'),
 (9234, 'Xã Phú Vang', '534869234', '486', '0000-00-00 00:00:00', '2021-12-19 16:12:24'),
 (9235, 'Xã Mỹ Hạnh Bắc', '514469235', '446', '0000-00-00 00:00:00', '2021-12-19 16:12:24'),
@@ -11138,9 +11169,9 @@ INSERT INTO `wards` (`id`, `name`, `code`, `district_id`, `created_at`, `updated
 (9802, 'Xã An Bình', '565349802', '534', '0000-00-00 00:00:00', '2021-12-19 16:12:26'),
 (9803, 'Phường VII', '', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (9804, 'Xã Hòa An', '575579804', '557', '0000-00-00 00:00:00', '2021-12-19 16:12:26'),
-(9805, 'Xã Mỹ Hội', '565349805', '534', '0000-00-00 00:00:00', '2021-12-19 16:12:26');
+(9805, 'Xã Mỹ Hội', '565349805', '534', '0000-00-00 00:00:00', '2021-12-19 16:12:26'),
+(9806, 'Xã Vị Tân', '', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 INSERT INTO `wards` (`id`, `name`, `code`, `district_id`, `created_at`, `updated_at`) VALUES
-(9806, 'Xã Vị Tân', '', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (9807, 'Thị trấn Núi Sập', '575599807', '559', '0000-00-00 00:00:00', '2021-12-19 16:12:26'),
 (9808, 'Xã Mỹ Hiệp', '565349808', '534', '0000-00-00 00:00:00', '2021-12-19 16:12:26'),
 (9809, 'Thị trấn Phú Hoà', '575599809', '559', '0000-00-00 00:00:00', '2021-12-19 16:12:26'),
@@ -11949,94 +11980,95 @@ INSERT INTO `wards` (`id`, `name`, `code`, `district_id`, `created_at`, `updated
 (10611, 'Xã Thạnh Tiến', '5959710611', '597', '0000-00-00 00:00:00', '2021-12-19 16:12:30'),
 (10612, 'Xã Thạnh Thắng', '5959710612', '597', '0000-00-00 00:00:00', '2021-12-19 16:12:30'),
 (10613, 'Xã Thạnh Lợi', '5959710613', '597', '0000-00-00 00:00:00', '2021-12-19 16:12:30'),
-(10614, 'Xã Thạnh Qưới', '5959710614', '597', '0000-00-00 00:00:00', '2021-12-19 16:12:30');
+(10614, 'Xã Thạnh Qưới', '5959710614', '597', '0000-00-00 00:00:00', '2021-12-19 16:12:30'),
+(10616, 'Xã Test', '653898574', '65389', '2021-12-25 10:30:34', '2021-12-25 10:30:34');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `admins`
+-- Chỉ mục cho bảng `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD KEY `admins_role_id_foreign` (`role_id`);
 
 --
--- Indexes for table `declarations`
+-- Chỉ mục cho bảng `declarations`
 --
 ALTER TABLE `declarations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `districts`
+-- Chỉ mục cho bảng `districts`
 --
 ALTER TABLE `districts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Chỉ mục cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `model_has_permissions`
+-- Chỉ mục cho bảng `model_has_permissions`
 --
 ALTER TABLE `model_has_permissions`
   ADD PRIMARY KEY (`permission_id`,`model_id`,`model_type`),
   ADD KEY `model_has_permissions_model_id_model_type_index` (`model_id`,`model_type`);
 
 --
--- Indexes for table `model_has_roles`
+-- Chỉ mục cho bảng `model_has_roles`
 --
 ALTER TABLE `model_has_roles`
   ADD PRIMARY KEY (`role_id`,`model_id`,`model_type`),
   ADD KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`);
 
 --
--- Indexes for table `oauth_access_tokens`
+-- Chỉ mục cho bảng `oauth_access_tokens`
 --
 ALTER TABLE `oauth_access_tokens`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_access_tokens_user_id_index` (`user_id`);
 
 --
--- Indexes for table `oauth_auth_codes`
+-- Chỉ mục cho bảng `oauth_auth_codes`
 --
 ALTER TABLE `oauth_auth_codes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_auth_codes_user_id_index` (`user_id`);
 
 --
--- Indexes for table `oauth_clients`
+-- Chỉ mục cho bảng `oauth_clients`
 --
 ALTER TABLE `oauth_clients`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_clients_user_id_index` (`user_id`);
 
 --
--- Indexes for table `oauth_personal_access_clients`
+-- Chỉ mục cho bảng `oauth_personal_access_clients`
 --
 ALTER TABLE `oauth_personal_access_clients`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `oauth_refresh_tokens`
+-- Chỉ mục cho bảng `oauth_refresh_tokens`
 --
 ALTER TABLE `oauth_refresh_tokens`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_refresh_tokens_access_token_id_index` (`access_token_id`);
 
 --
--- Indexes for table `permissions`
+-- Chỉ mục cho bảng `permissions`
 --
 ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Chỉ mục cho bảng `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -12044,137 +12076,137 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `provinces`
+-- Chỉ mục cho bảng `provinces`
 --
 ALTER TABLE `provinces`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `roles`
+-- Chỉ mục cho bảng `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_name_guard_name_unique` (`name`,`guard_name`);
 
 --
--- Indexes for table `role_has_permissions`
+-- Chỉ mục cho bảng `role_has_permissions`
 --
 ALTER TABLE `role_has_permissions`
   ADD PRIMARY KEY (`permission_id`,`role_id`),
   ADD KEY `role_has_permissions_role_id_foreign` (`role_id`);
 
 --
--- Indexes for table `villages`
+-- Chỉ mục cho bảng `villages`
 --
 ALTER TABLE `villages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `wards`
+-- Chỉ mục cho bảng `wards`
 --
 ALTER TABLE `wards`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT cho bảng `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `declarations`
+-- AUTO_INCREMENT cho bảng `declarations`
 --
 ALTER TABLE `declarations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `districts`
+-- AUTO_INCREMENT cho bảng `districts`
 --
 ALTER TABLE `districts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=633;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=635;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `oauth_clients`
+-- AUTO_INCREMENT cho bảng `oauth_clients`
 --
 ALTER TABLE `oauth_clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `oauth_personal_access_clients`
+-- AUTO_INCREMENT cho bảng `oauth_personal_access_clients`
 --
 ALTER TABLE `oauth_personal_access_clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `permissions`
+-- AUTO_INCREMENT cho bảng `permissions`
 --
 ALTER TABLE `permissions`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT cho bảng `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `provinces`
+-- AUTO_INCREMENT cho bảng `provinces`
 --
 ALTER TABLE `provinces`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
--- AUTO_INCREMENT for table `roles`
+-- AUTO_INCREMENT cho bảng `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `villages`
+-- AUTO_INCREMENT cho bảng `villages`
 --
 ALTER TABLE `villages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `wards`
+-- AUTO_INCREMENT cho bảng `wards`
 --
 ALTER TABLE `wards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10616;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10617;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `admins`
+-- Các ràng buộc cho bảng `admins`
 --
 ALTER TABLE `admins`
   ADD CONSTRAINT `admins_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `model_has_permissions`
+-- Các ràng buộc cho bảng `model_has_permissions`
 --
 ALTER TABLE `model_has_permissions`
   ADD CONSTRAINT `model_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `model_has_roles`
+-- Các ràng buộc cho bảng `model_has_roles`
 --
 ALTER TABLE `model_has_roles`
   ADD CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `role_has_permissions`
+-- Các ràng buộc cho bảng `role_has_permissions`
 --
 ALTER TABLE `role_has_permissions`
   ADD CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
