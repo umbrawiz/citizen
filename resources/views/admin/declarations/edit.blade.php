@@ -1,4 +1,4 @@
-<div class="modal fade" id="edit-declaration-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="edit-testdeclaration" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true" style="display: none;">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -75,17 +75,17 @@
     <script>
         $(document).ready(function() {
             $('#button-modal-edit-declaration').click(function() {
-                var id = $('#edit-declaration-1 input[name=id]').val();
-                var name = $('#edit-declaration-1 #name').val();
-                var identity_card = $('#edit-declaration-1 #identity_card').val();
-                var birthday = $('#edit-declaration-1 #birthday').val();
-                var sex = $('#edit-declaration-1 #sex').val();
-                var country = $('#edit-declaration-1 #country').val();
-                var permanent_address = $('#edit-declaration-1 #permanent_address').val();
-                var temporary_address = $('#edit-declaration-1 #temporary_address').val();
-                var religion = $('#edit-declaration-1 #religion').val();
-                var education = $('#edit-declaration-1 #education').val();
-                var job = $('#edit-declaration-1 #job').val();
+                var id = $('#edit-testdeclaration input[name=id]').val();
+                var name = $('#edit-testdeclaration #name').val();
+                var identity_card = $('#edit-testdeclaration #identity_card').val();
+                var birthday = $('#edit-testdeclaration #birthday').val();
+                var sex = $('#edit-testdeclaration #sex').val();
+                var country = $('#edit-testdeclaration #country').val();
+                var permanent_address = $('#edit-testdeclaration #permanent_address').val();
+                var temporary_address = $('#edit-testdeclaration #temporary_address').val();
+                var religion = $('#edit-testdeclaration #religion').val();
+                var education = $('#edit-testdeclaration #education').val();
+                var job = $('#edit-testdeclaration #job').val();
                 var message = '';
 
                 if (name == '') {
@@ -164,7 +164,7 @@
                                     data.message,
                                     'success'
                                 )
-                                $('#edit-declaration-1').modal('hide');
+                                $('#edit-testdeclaration').modal('hide');
                                 $('#dataTables-declaration').DataTable().ajax.reload();
 
                             } else {

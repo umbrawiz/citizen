@@ -76,7 +76,8 @@
                                     'success'
                                 )
                                 $('#add-district').modal('hide');
-                                $('#dataTables-district').DataTable().ajax.reload();
+                                // $('#dataTables-district').DataTable().ajax.reload();
+                                location.reload();
 
                             } else {
                                 Swal.fire(

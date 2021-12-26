@@ -76,8 +76,8 @@
                                     'success'
                                 )
                                 $('#add-province').modal('hide');
-                                $('#dataTables-province').DataTable().ajax.reload();
-
+                                // $('#dataTables-province').DataTable().ajax.reload();
+                                location.reload();
                             } else {
                                 Swal.fire(
                                     'Lỗi',

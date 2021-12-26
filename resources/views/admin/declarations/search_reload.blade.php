@@ -69,7 +69,7 @@
                                     <td>{{ $item->education }}</td>
                                     <td>{{ $item->job }}</td>
                                     <td>
-                                        <button data-id="{{ $item->id }}" id="button-edit-declaration" data-toggle="modal" data-target="#edit-declaration" class="btn-primary">
+                                        <button data-id="{{ $item->id }}" id="button-edit-declaration" data-toggle="modal" data-target="#edit-testdeclaration" class="btn-primary">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </button>
                                         <button data-id="{{ $item->id }}" id="button-delete-declaration" class="btn-danger">

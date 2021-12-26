@@ -162,7 +162,8 @@
                                     'success'
                                 )
                                 $('#add-testdeclaration').modal('hide');
-                                $('#dataTables-declaration').DataTable().ajax.reload();
+                                location.reload();
+                                // $('#dataTables-declaration').DataTable().ajax.reload();
 
                             } else {
                                 Swal.fire(

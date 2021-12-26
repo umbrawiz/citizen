@@ -76,8 +76,8 @@
                                     'success'
                                 )
                                 $('#add-ward').modal('hide');
-                                $('#dataTables-ward').DataTable().ajax.reload();
-
+                                // $('#dataTables-ward').DataTable().ajax.reload();
+                                location.reload();
                             } else {
                                 Swal.fire(
                                     'Lỗi',

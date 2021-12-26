@@ -76,8 +76,8 @@
                                     'success'
                                 )
                                 $('#add-village').modal('hide');
-                                $('#dataTables-village').DataTable().ajax.reload();
-
+                                // $('#dataTables-village').DataTable().ajax.reload();
+                                location.reload();
                             } else {
                                 Swal.fire(
                                     'Lỗi',
