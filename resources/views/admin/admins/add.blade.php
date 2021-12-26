@@ -88,7 +88,8 @@
                                     'success'
                                 )
                                 $('#add-admin').modal('hide');
-                                $('#dataTables-admin').DataTable().ajax.reload();
+                                // $('#dataTables-admin').DataTable().ajax.reload();
+                                location.reload();
 
                             } else {
                                 Swal.fire(
