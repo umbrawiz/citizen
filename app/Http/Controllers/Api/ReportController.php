@@ -176,8 +176,9 @@ class ReportController extends Controller
 
     public function sumDeclarationVillage()
     {
+        $code = auth()->user()->username;
         $total = 0;
-        $villages = Village::withCount('declarations')->orderBy('created_at', 'DESC')->get();
+        $villages = Village::withCount('declarations')->whereRaw("code like '$code%'")->orWhere('ward_id', 'like', $code)->orderBy('created_at', 'DESC')->get();
         foreach ($villages as $village) {
             $total += $village->declarations_count;
         }
@@ -189,8 +190,9 @@ class ReportController extends Controller
 
     public function sumDeclarationProvince()
     {
+        $code = auth()->user()->username;
         $total = 0;
-        $provinces = Province::orderBy('created_at', 'DESC')->get();
+        $provinces = Province::whereRaw("code like '$code%'")->orderBy('created_at', 'DESC')->get();
 
         foreach ($provinces as $key => $value) {
             $total += $value->declarations()->count();
@@ -204,9 +206,10 @@ class ReportController extends Controller
 
     public function sumDeclarationDistrict()
     {
+        $code = auth()->user()->username;
         $total = 0;
 
-        $districts = District::orderBy('created_at', 'DESC')->get();
+        $districts = District::whereRaw("code like '$code%'")->orWhere('province_id', 'like', $code)->orderBy('created_at', 'DESC')->get();
 
         foreach ($districts as $key => $value) {
             $total += $value->declarations()->count();
@@ -220,8 +223,9 @@ class ReportController extends Controller
 
     public function sumDeclarationWard()
     {
+        $code = auth()->user()->username;
         $total = 0;
-        $wards = Ward::withCount('declarations')->orderBy('created_at', 'DESC')->get();
+        $wards = Ward::withCount('declarations')->whereRaw("code like '$code%'")->orWhere('district_id', 'like', $code)->orderBy('created_at', 'DESC')->get();
         foreach ($wards as $village) {
             $total += $village->declarations_count;
         }
