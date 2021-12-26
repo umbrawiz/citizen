@@ -71,7 +71,7 @@
                 },
                 success: function(response) {
                     if (response.status == '200') {
-                        $('#total-village').text('Tổng số dân là: ' + response.data);
+                        $('#total-village').text('Tổng dân cư là: ' + response.data + ' người');
                     }
                 }
             });
