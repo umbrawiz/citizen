@@ -9,8 +9,5 @@
 ## B5: truy cập link: 127.0.0.1:8000
 
 ## Các tài khoản:
+### Tk admin: username: admin, pass: 123456
 ### Tk A1: username: A1, pass: 123456
-### Tk A2: username: 50, pass: 123456
-### Tk A3: username: 50388, pass: 123456
-### Tk B1: username: 503888573, pass: 123456
-### Tk B2: username: 50388857301, pass: 123456
