@@ -19,7 +19,7 @@
                                 <div class="form-group">
                                     <label for="name">Mã: <span class="text-danger">*</span></label>
                                     <input type="text"  class="form-control" placeholder="Nhập mã" id="code"
-                                        name="code" maxlength="10">
+                                        name="code" maxlength="255">
                                 </div>
                                 <input type="hidden" name="id">
                             </form>
